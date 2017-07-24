@@ -13,7 +13,7 @@ public class SendMail implements Runnable {
 	float amt, bal;
 
 	public SendMail(String toEmail, String operation, float amount, float balance) {
-		System.out.println("Thread started");
+		System.out.println("Mail Thread started");
 		to = toEmail;
 		oper = operation;
 		amt = amount;
@@ -27,12 +27,11 @@ public class SendMail implements Runnable {
 			+ " at " + Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + ":"
 			+ Calendar.getInstance().get(Calendar.MINUTE) + ":" + Calendar.getInstance().get(Calendar.SECOND);
 
-	public static void sendEmail(String toEmail, String operation, float amount, float bal) {
+	public static void sendEmail(String toEmail, String operation, float bal) {
 		System.out.println("In the method");
 		String from = "saadvatm@gmail.com";
 		String to = toEmail;
 		String str1 = operation;
-		float amt = amount;
 		float avlbal = bal;
 		final String password = "password13579";
 
@@ -71,7 +70,7 @@ public class SendMail implements Runnable {
 	@Override
 	public void run() {
 		System.out.println("Thread is running");
-		SendMail.sendEmail(to, oper, amt, bal);
+		SendMail.sendEmail(to, oper, bal);
 	}
 
 }

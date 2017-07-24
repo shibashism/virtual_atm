@@ -1,6 +1,6 @@
 package javaapplication2;
 
-import newpackage.SendMail;
+import newpackage.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
@@ -258,7 +258,8 @@ public class Withdrawal extends javax.swing.JFrame { // implements Runnable {
 					obj_with.change();
 					String str = "A Withdrawal of INR" + obj_with.num1
 							+ "has been made using your Debit Card linked to SAAD Bank Account on " + sDate + ".";
-					SendMail obj = new SendMail(LoginPage.email, str, obj_with.num1, obj_with.res);
+					new MiniStatementGen(LoginPage.user, obj_with.num1, obj_with.res); //Start Ministatement Generation Thread
+					new SendMail(LoginPage.email, str, obj_with.num1, obj_with.res); //Start Mail Sending Thread
 					t.start();
 					System.out.println("Withdrawed amount: " + obj_with.num1 + " on " + sDate);
 					Cancel.setEnabled(false);
