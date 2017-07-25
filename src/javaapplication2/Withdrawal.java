@@ -8,8 +8,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.TimeZone;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.Timer;
 //import java.util.regex.Matcher;
 //import java.util.regex.Pattern;
@@ -48,8 +46,6 @@ public class Withdrawal extends javax.swing.JFrame { // implements Runnable {
 					if (c1 == 99)
 						f = 0;
 				}
-				// if(c1>=100)
-				// t.stop();
 			}
 		});
 	}
@@ -71,156 +67,148 @@ public class Withdrawal extends javax.swing.JFrame { // implements Runnable {
 
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated
-	// Code">//GEN-BEGIN:initComponents
-	private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-		Copyright = new javax.swing.JLabel();
-		btnWithdrawal = new javax.swing.JButton();
-		Withdrawal_textfield = new javax.swing.JTextField();
-		Header = new javax.swing.JLabel();
-		Back = new javax.swing.JButton();
-		Cancel = new javax.swing.JButton();
-		Reset = new javax.swing.JButton();
-		jProgressBar1 = new javax.swing.JProgressBar();
+        Copyright = new javax.swing.JLabel();
+        btnWithdrawal = new javax.swing.JButton();
+        Withdrawal_textfield = new javax.swing.JTextField();
+        Header = new javax.swing.JLabel();
+        Back = new javax.swing.JButton();
+        Cancel = new javax.swing.JButton();
+        Reset = new javax.swing.JButton();
+        jProgressBar1 = new javax.swing.JProgressBar();
 
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-		setForeground(new java.awt.Color(255, 51, 51));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setForeground(new java.awt.Color(255, 51, 51));
 
-		Copyright.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-		Copyright.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		Copyright.setText("SAAD ©");
-		Copyright.setToolTipText("Copyright");
+        Copyright.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
+        Copyright.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Copyright.setText("SBM ©");
+        Copyright.setToolTipText("Copyright");
 
-		btnWithdrawal.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
-		btnWithdrawal.setText("Withdrawal");
-		btnWithdrawal.setToolTipText("Click to withdraw");
-		btnWithdrawal.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				btnWithdrawalActionPerformed(evt);
-			}
-		});
+        btnWithdrawal.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        btnWithdrawal.setText("Withdrawal");
+        btnWithdrawal.setToolTipText("Click to withdraw");
+        btnWithdrawal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnWithdrawalActionPerformed(evt);
+            }
+        });
 
-		Withdrawal_textfield.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
-		Withdrawal_textfield.setText("Enter the amount");
-		Withdrawal_textfield.setToolTipText("Please enter the amount to Withdraw");
-		Withdrawal_textfield.addFocusListener(new java.awt.event.FocusAdapter() {
-			public void focusGained(java.awt.event.FocusEvent evt) {
-				Withdrawal_textfieldFocusGained(evt);
-			}
+        Withdrawal_textfield.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        Withdrawal_textfield.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Withdrawal_textfield.setText("Enter the amount");
+        Withdrawal_textfield.setToolTipText("Please enter the amount to Withdraw");
+        Withdrawal_textfield.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Withdrawal_textfieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Withdrawal_textfieldFocusLost(evt);
+            }
+        });
+        Withdrawal_textfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Withdrawal_textfieldActionPerformed(evt);
+            }
+        });
 
-			public void focusLost(java.awt.event.FocusEvent evt) {
-				Withdrawal_textfieldFocusLost(evt);
-			}
-		});
-		Withdrawal_textfield.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				Withdrawal_textfieldActionPerformed(evt);
-			}
-		});
+        Header.setBackground(new java.awt.Color(0, 204, 153));
+        Header.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
+        Header.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Header.setText("Welcome To SBM");
+        Header.setToolTipText("");
+        Header.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Header.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Header.setDoubleBuffered(true);
+        Header.setName(""); // NOI18N
 
-		Header.setBackground(new java.awt.Color(0, 204, 153));
-		Header.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
-		Header.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		Header.setText("Welcome To SBM");
-		Header.setToolTipText("");
-		Header.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-		Header.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-		Header.setDoubleBuffered(true);
-		Header.setName(""); // NOI18N
+        Back.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        Back.setText("Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
 
-		Back.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
-		Back.setText("Back");
-		Back.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				BackActionPerformed(evt);
-			}
-		});
+        Cancel.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        Cancel.setText("Cancel");
+        Cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelActionPerformed(evt);
+            }
+        });
 
-		Cancel.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
-		Cancel.setText("Cancel");
-		Cancel.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				CancelActionPerformed(evt);
-			}
-		});
+        Reset.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        Reset.setText("Reset");
+        Reset.setToolTipText("Click here to Reset");
+        Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetActionPerformed(evt);
+            }
+        });
 
-		Reset.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
-		Reset.setText("Reset");
-		Reset.setToolTipText("Click here to Reset");
-		Reset.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				ResetActionPerformed(evt);
-			}
-		});
+        jProgressBar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jProgressBar1.setToolTipText("");
+        jProgressBar1.setString("Processing your transaction");
+        jProgressBar1.setStringPainted(true);
+        jProgressBar1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jProgressBar1StateChanged(evt);
+            }
+        });
 
-		jProgressBar1.setToolTipText("");
-		jProgressBar1.setString("Processing your transaction");
-		jProgressBar1.setStringPainted(true);
-		jProgressBar1.addChangeListener(new javax.swing.event.ChangeListener() {
-			public void stateChanged(javax.swing.event.ChangeEvent evt) {
-				jProgressBar1StateChanged(evt);
-			}
-		});
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(201, 201, 201)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnWithdrawal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Reset, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(153, 153, 153))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Copyright, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Withdrawal_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(400, 400, 400))))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(141, 141, 141)
+                .addComponent(Withdrawal_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnWithdrawal, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Reset, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                    .addComponent(Cancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Copyright, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
-		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-		getContentPane().setLayout(layout);
-		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(
-				javax.swing.GroupLayout.Alignment.TRAILING,
-				layout.createSequentialGroup().addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 879,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(18, 18, 18).addComponent(Copyright, javax.swing.GroupLayout.PREFERRED_SIZE, 64,
-								javax.swing.GroupLayout.PREFERRED_SIZE))
-				.addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-						Short.MAX_VALUE)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-						layout.createSequentialGroup().addGap(201, 201, 201)
-								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-										.addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE,
-												179, javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 179,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257,
-										Short.MAX_VALUE)
-								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(btnWithdrawal, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.PREFERRED_SIZE, 200,
-												javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(Reset, javax.swing.GroupLayout.Alignment.TRAILING,
-												javax.swing.GroupLayout.PREFERRED_SIZE, 200,
-												javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addGap(153, 153, 153))
-				.addGroup(layout.createSequentialGroup().addGap(401, 401, 401)
-						.addComponent(Withdrawal_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 187,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-						.addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
-						.addComponent(Withdrawal_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 46,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(86, 86, 86)
-						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-								.addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 46,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnWithdrawal, javax.swing.GroupLayout.PREFERRED_SIZE, 46,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addGap(38, 38, 38)
-						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(Cancel, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-								.addComponent(Reset, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addGap(26, 26, 26)
-						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(Copyright, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-								.addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))));
-
-		pack();
-	}// </editor-fold>//GEN-END:initComponents
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 
 	private void Withdrawal_textfieldFocusGained(java.awt.event.FocusEvent evt) {// GEN-FIRST:event_Withdrawal_textfieldFocusGained
 		if (Withdrawal_textfield.getText().equals("Enter the amount"))
@@ -357,16 +345,16 @@ public class Withdrawal extends javax.swing.JFrame { // implements Runnable {
 	 * Withdrawal().setVisible(true); } }); }
 	 */
 
-	// Variables declaration - do not modify//GEN-BEGIN:variables
-	private javax.swing.JButton Back;
-	private javax.swing.JButton Cancel;
-	private javax.swing.JLabel Copyright;
-	private javax.swing.JLabel Header;
-	private javax.swing.JButton Reset;
-	private javax.swing.JTextField Withdrawal_textfield;
-	private javax.swing.JButton btnWithdrawal;
-	private javax.swing.JProgressBar jProgressBar1;
-	// End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back;
+    private javax.swing.JButton Cancel;
+    private javax.swing.JLabel Copyright;
+    private javax.swing.JLabel Header;
+    private javax.swing.JButton Reset;
+    private javax.swing.JTextField Withdrawal_textfield;
+    private javax.swing.JButton btnWithdrawal;
+    private javax.swing.JProgressBar jProgressBar1;
+    // End of variables declaration//GEN-END:variables
 
 	// @Override
 	// public void run() {
