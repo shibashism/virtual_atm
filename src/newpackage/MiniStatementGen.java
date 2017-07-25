@@ -27,16 +27,16 @@ public class MiniStatementGen implements Runnable {
 	}
 	
 	public static void generatePDF(){
-		Date now = new Date();
-    	SimpleDateFormat date = new SimpleDateFormat("EEEE    dd/MM/YYYY");
-    	SimpleDateFormat time = new SimpleDateFormat("kk:mm:ss zzz");
-    	String atmId = "ATM007";
-    	String accNo = "XXXXXXXX75459645";
-    	
-    	String txnAmount = ""+ txnAmt;
-    	String avlBalance = "" + bal;
-    	
-    	String outputFileName = userName + txnId + ".pdf";
+            Date now = new Date();
+            SimpleDateFormat date = new SimpleDateFormat("EEEE    dd/MM/YYYY");
+            SimpleDateFormat time = new SimpleDateFormat("kk:mm:ss zzz");
+            String atmId = "ATM007";
+            String accNo = "XXXXXXXX75459645";
+
+            String txnAmount = ""+ txnAmt;
+            String avlBalance = "" + bal;
+
+            String outputFileName = userName + txnId + ".pdf";
     	
     	
 
@@ -58,14 +58,10 @@ public class MiniStatementGen implements Runnable {
 			content.showTextAligned(PdfContentByte.ALIGN_LEFT, txnAmount, 90, 142.25f, 0);
 			content.showTextAligned(PdfContentByte.ALIGN_LEFT, avlBalance, 70, 127.3f, 0);
 			content.showTextAligned(PdfContentByte.ALIGN_LEFT, "SUCCESSFUL", 70, 120.2f, 0);
-			content.endText();
-			
+			content.endText();			
 			stamper.close();
 			System.out.println("PDF Generated!");
-			
-			
-	    	
-	    	
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
