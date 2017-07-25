@@ -77,6 +77,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="Reset">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="18" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Reset"/>
         <Property name="toolTipText" type="java.lang.String" value="Click here to clear the values"/>
       </Properties>
@@ -86,6 +89,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="Login">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="18" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Login"/>
         <Property name="toolTipText" type="java.lang.String" value="Click here to Login"/>
       </Properties>
@@ -141,7 +147,8 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="3"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="SAAD &#xa9;"/>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="SBM &#xa9;"/>
         <Property name="toolTipText" type="java.lang.String" value="Copyright"/>
       </Properties>
     </Component>

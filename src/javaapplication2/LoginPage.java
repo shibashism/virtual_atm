@@ -1,5 +1,4 @@
-package javaapplication2;
-import newpackage.SendMail; 
+package javaapplication2; 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -65,6 +64,7 @@ public class LoginPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        Reset.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Reset.setText("Reset");
         Reset.setToolTipText("Click here to clear the values");
         Reset.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +73,7 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
+        Login.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Login.setText("Login");
         Login.setToolTipText("Click here to Login");
         Login.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +125,8 @@ public class LoginPage extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-        jLabel2.setText("SAAD ©");
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("SBM ©");
         jLabel2.setToolTipText("Copyright");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -216,7 +218,6 @@ public class LoginPage extends javax.swing.JFrame {
                                 System.out.println("Logged in as "+user+"\t"+sDate);
                                 new ChoiceButtons().setVisible(true);
                                 this.dispose();
-                                /////////this.create2();
                         } catch (SQLException e) {
                                     System.out.println("\nFalse logging in from Username: "+user+" on\t"+sDate);
                                     err++;
