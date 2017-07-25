@@ -2,15 +2,15 @@ package javaapplication2;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import newpackage.SendMail;
-//import java.awt.event.FocusListener;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.TimeZone;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+//import java.util.regex.Matcher;
+//import java.util.regex.Pattern;
 import javax.swing.Timer;
+import newpackage.MiniStatementGen;
 
 public class Deposit extends javax.swing.JFrame {
     ChoiceButtons obj_dep=new ChoiceButtons();
@@ -81,7 +81,7 @@ public class Deposit extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Deposit.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Deposit.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Deposit.setText("Deposit");
         Deposit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +89,8 @@ public class Deposit extends javax.swing.JFrame {
             }
         });
 
-        Deposit_textfield.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Deposit_textfield.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        Deposit_textfield.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Deposit_textfield.setText("Enter the amount");
         Deposit_textfield.setToolTipText("Please enter the amount to be deposited");
         Deposit_textfield.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -107,7 +108,7 @@ public class Deposit extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-        jLabel1.setText("SAAD ©");
+        jLabel1.setText("SBM ©");
         jLabel1.setToolTipText("Copyright");
 
         Header.setBackground(new java.awt.Color(0, 204, 153));
@@ -120,7 +121,7 @@ public class Deposit extends javax.swing.JFrame {
         Header.setDoubleBuffered(true);
         Header.setName(""); // NOI18N
 
-        Back.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Back.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Back.setText("Back");
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,7 +129,7 @@ public class Deposit extends javax.swing.JFrame {
             }
         });
 
-        Cancel.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Cancel.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Cancel.setText("Cancel");
         Cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +137,7 @@ public class Deposit extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton1.setText("Reset");
         jButton1.setToolTipText("Click here to Reset");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -145,6 +146,9 @@ public class Deposit extends javax.swing.JFrame {
             }
         });
 
+        jProgressBar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jProgressBar1.setString("Processing your transaction");
+        jProgressBar1.setStringPainted(true);
         jProgressBar1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jProgressBar1StateChanged(evt);
@@ -173,10 +177,7 @@ public class Deposit extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,13 +189,13 @@ public class Deposit extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Deposit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -206,16 +207,16 @@ public class Deposit extends javax.swing.JFrame {
     }//GEN-LAST:event_Deposit_textfieldActionPerformed
 
     private void DepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepositActionPerformed
-        Pattern p = Pattern.compile("[0-9]", Pattern.CASE_INSENSITIVE);
-        Matcher m = p.matcher(Deposit_textfield.getText());
-        m.find();
+        //Pattern p = Pattern.compile("[0-9]", Pattern.CASE_INSENSITIVE);
+        //Matcher m = p.matcher(Deposit_textfield.getText());
+        //m.find();
         if(Deposit_textfield.getText().equals("Enter the amount"))
 			{
 				javax.swing.JOptionPane.showMessageDialog(rootPane, "Field cannot be blank", "Error Deposit", getDefaultCloseOperation());
 			}
 			else
 			{
-				if( Integer.parseInt(Deposit_textfield.getText())>0 || m.hitEnd())
+				if( Integer.parseInt(Deposit_textfield.getText())>0)// || m.hitEnd())
 				{
 					obj_dep.num1=Integer.parseInt(Deposit_textfield.getText());
 					obj_dep.res=LoginPage.bal+obj_dep.num1;
@@ -224,6 +225,7 @@ public class Deposit extends javax.swing.JFrame {
 					Deposit_textfield.setText("");
 					obj_dep.change();
                                         String str="A Deposit of INR"+obj_dep.num1+ "has been made using your Debit Card linked to SAAD Bank Account on "+sDate+".";
+                                        //new MiniStatementGen(LoginPage.user,obj_dep.num1, obj_dep.res); //Start Ministatement Generation Thread
                                         SendMail obj=new SendMail(LoginPage.email,str,obj_dep.num1,obj_dep.res);
                                         t.start();
                                         System.out.println("Deposited amount: "+obj_dep.num1+" on "+sDate);
