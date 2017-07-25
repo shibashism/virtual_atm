@@ -64,12 +64,12 @@ public class PIN_Change extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Old_Pin_label.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Old_Pin_label.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Old_Pin_label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Old_Pin_label.setText("Old PIN :");
         Old_Pin_label.setToolTipText("");
 
-        New_Pin_label.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        New_Pin_label.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         New_Pin_label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         New_Pin_label.setText("New PIN :");
 
@@ -102,7 +102,7 @@ public class PIN_Change extends javax.swing.JFrame {
             }
         });
 
-        Change_PIN.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Change_PIN.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Change_PIN.setText("Change PIN");
         Change_PIN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +110,7 @@ public class PIN_Change extends javax.swing.JFrame {
             }
         });
 
-        Reset.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Reset.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Reset.setText("Reset");
         Reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,7 +119,7 @@ public class PIN_Change extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-        jLabel3.setText("SAAD ©");
+        jLabel3.setText("SBM ©");
 
         Header.setBackground(new java.awt.Color(0, 204, 153));
         Header.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
@@ -131,7 +131,7 @@ public class PIN_Change extends javax.swing.JFrame {
         Header.setDoubleBuffered(true);
         Header.setName(""); // NOI18N
 
-        Back.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Back.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Back.setText("Back");
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,7 +139,7 @@ public class PIN_Change extends javax.swing.JFrame {
             }
         });
 
-        Cancel.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Cancel.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Cancel.setText("Cancel");
         Cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
