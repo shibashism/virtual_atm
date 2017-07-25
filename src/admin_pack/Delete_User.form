@@ -49,6 +49,10 @@
               </Group>
               <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
           </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="Copyright" min="-2" pref="64" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -59,7 +63,7 @@
                   <Component id="Username_text" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="Username_label" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Back" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="Delete" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
@@ -69,7 +73,8 @@
                   <Component id="Cancel" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="Reset" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="76" max="32767" attributes="0"/>
+              <EmptySpace pref="75" max="32767" attributes="0"/>
+              <Component id="Copyright" min="-2" pref="22" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -78,7 +83,7 @@
     <Component class="javax.swing.JLabel" name="Username_label">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
         <Property name="text" type="java.lang.String" value="Username :"/>
@@ -87,7 +92,7 @@
     <Component class="javax.swing.JTextField" name="Username_text">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Enter Username"/>
@@ -102,7 +107,7 @@
     <Component class="javax.swing.JButton" name="Delete">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
@@ -113,7 +118,7 @@
     <Component class="javax.swing.JButton" name="Back">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>
@@ -124,7 +129,7 @@
     <Component class="javax.swing.JButton" name="Cancel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cancel"/>
       </Properties>
@@ -135,7 +140,7 @@
     <Component class="javax.swing.JButton" name="Reset">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Reset"/>
         <Property name="toolTipText" type="java.lang.String" value="Click here to Reset the values"/>
@@ -143,6 +148,16 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ResetActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Copyright">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="14" style="3"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="SBM &#xa9;"/>
+        <Property name="toolTipText" type="java.lang.String" value="Copyright"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

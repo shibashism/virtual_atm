@@ -29,16 +29,17 @@ public class Delete_User extends javax.swing.JFrame {
         Back = new javax.swing.JButton();
         Cancel = new javax.swing.JButton();
         Reset = new javax.swing.JButton();
+        Copyright = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
         setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
 
-        Username_label.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Username_label.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Username_label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Username_label.setText("Username :");
 
-        Username_text.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Username_text.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Username_text.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Username_text.setText("Enter Username");
         Username_text.setToolTipText("Please enter username to be deleted");
@@ -56,7 +57,7 @@ public class Delete_User extends javax.swing.JFrame {
             }
         });
 
-        Delete.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Delete.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Delete.setText("Delete");
         Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,7 +65,7 @@ public class Delete_User extends javax.swing.JFrame {
             }
         });
 
-        Back.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Back.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Back.setText("Back");
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +73,7 @@ public class Delete_User extends javax.swing.JFrame {
             }
         });
 
-        Cancel.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Cancel.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Cancel.setText("Cancel");
         Cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +81,7 @@ public class Delete_User extends javax.swing.JFrame {
             }
         });
 
-        Reset.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Reset.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Reset.setText("Reset");
         Reset.setToolTipText("Click here to Reset the values");
         Reset.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +89,11 @@ public class Delete_User extends javax.swing.JFrame {
                 ResetActionPerformed(evt);
             }
         });
+
+        Copyright.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
+        Copyright.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Copyright.setText("SBM ©");
+        Copyright.setToolTipText("Copyright");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,6 +115,9 @@ public class Delete_User extends javax.swing.JFrame {
                     .addComponent(Delete, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                     .addComponent(Reset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(127, 127, 127))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Copyright, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,7 +126,7 @@ public class Delete_User extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Username_text, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Username_label, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(110, 110, 110)
+                .addGap(89, 89, 89)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -125,7 +134,8 @@ public class Delete_User extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addComponent(Copyright, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -216,6 +226,7 @@ public class Delete_User extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
     private javax.swing.JButton Cancel;
+    private javax.swing.JLabel Copyright;
     private javax.swing.JButton Delete;
     private javax.swing.JButton Reset;
     private javax.swing.JLabel Username_label;
