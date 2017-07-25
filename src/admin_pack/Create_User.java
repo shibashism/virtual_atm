@@ -13,7 +13,7 @@ public class Create_User extends javax.swing.JFrame {
     public Create_User() {
         initComponents();
     }
-    public String user;
+    public String user,email;
     public Integer bal;
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,23 +34,25 @@ public class Create_User extends javax.swing.JFrame {
         Cancel = new javax.swing.JButton();
         Back = new javax.swing.JButton();
         Reset = new javax.swing.JButton();
+        Email_text = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Username :");
 
-        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Password :");
 
-        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Balance :");
 
-        Username_text.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Username_text.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Username_text.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Username_text.setText("Enter Username");
         Username_text.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -68,7 +70,7 @@ public class Create_User extends javax.swing.JFrame {
         });
 
         PIN_text.setEditable(false);
-        PIN_text.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        PIN_text.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         PIN_text.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         PIN_text.setText("Enter Password");
         PIN_text.setToolTipText("System generated password");
@@ -78,7 +80,7 @@ public class Create_User extends javax.swing.JFrame {
             }
         });
 
-        Balance_text.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Balance_text.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Balance_text.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Balance_text.setText("Enter Balance");
         Balance_text.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -95,7 +97,7 @@ public class Create_User extends javax.swing.JFrame {
             }
         });
 
-        Create_User.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Create_User.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Create_User.setText("Create User");
         Create_User.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +105,7 @@ public class Create_User extends javax.swing.JFrame {
             }
         });
 
-        Cancel.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Cancel.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Cancel.setText("Cancel");
         Cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +113,7 @@ public class Create_User extends javax.swing.JFrame {
             }
         });
 
-        Back.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Back.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Back.setText("Back");
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,7 +121,7 @@ public class Create_User extends javax.swing.JFrame {
             }
         });
 
-        Reset.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Reset.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Reset.setText("Reset");
         Reset.setToolTipText("Click here to Reset the values");
         Reset.addActionListener(new java.awt.event.ActionListener() {
@@ -128,22 +130,28 @@ public class Create_User extends javax.swing.JFrame {
             }
         });
 
+        Email_text.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        Email_text.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Email_text.setText("Enter email");
+        Email_text.setToolTipText("Please enter your email");
+        Email_text.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Email_textFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Email_textFocusLost(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel4.setText("Email :");
+        jLabel4.setToolTipText("Email Label");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(255, 255, 255)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Username_text, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                    .addComponent(PIN_text)
-                    .addComponent(Balance_text))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(207, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -154,15 +162,34 @@ public class Create_User extends javax.swing.JFrame {
                     .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Create_User, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(150, 150, 150))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(255, 255, 255)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(79, 79, 79)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Email_text, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Username_text, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                        .addComponent(PIN_text)
+                        .addComponent(Balance_text)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(118, 118, 118)
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Username_text, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Username_text, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(30, 30, 30)
+                    .addComponent(Email_text, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(PIN_text, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -190,7 +217,7 @@ public class Create_User extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelActionPerformed
 
     private void Create_UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Create_UserActionPerformed
-        if(Username_text.getText().equals("Enter Username")||Balance_text.getText().equals("Enter Balance"))
+        if(Username_text.getText().equals("Enter Username")||Balance_text.getText().equals("Enter Balance")||Email_text.getText().equals("Enter email"))
         {
             javax.swing.JOptionPane.showMessageDialog(rootPane, "Field cannot be left blank.", "Error", getDefaultCloseOperation());
         }
@@ -200,7 +227,8 @@ public class Create_User extends javax.swing.JFrame {
             bal=Integer.parseInt(Balance_text.getText());
             Integer n = ThreadLocalRandom.current().nextInt(1000,9999);
             PIN_text.setText(n.toString());
-            String query1="insert into userdata values('"+user+"',"+Integer.parseInt(PIN_text.getText())+","+bal+")";
+            email=Email_text.getText();
+            String query1="insert into userdata values('"+user+"',"+Integer.parseInt(PIN_text.getText())+","+bal+",'"+email+"',0)";
             try {
                  LoginPage.st.executeUpdate(query1);
             } catch (SQLException ex) {
@@ -210,6 +238,7 @@ public class Create_User extends javax.swing.JFrame {
             Username_text.setText("Enter Username");
             Balance_text.setText("Enter Balance");
             PIN_text.setText("Enter Password");
+            Email_text.setText("Enter email");
         }
     }//GEN-LAST:event_Create_UserActionPerformed
 
@@ -256,6 +285,16 @@ public class Create_User extends javax.swing.JFrame {
         PIN_text.setText("Enter Password");
     }//GEN-LAST:event_ResetActionPerformed
 
+    private void Email_textFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Email_textFocusGained
+        if(Email_text.getText().equals("Enter email"))
+            Email_text.setText("");
+    }//GEN-LAST:event_Email_textFocusGained
+
+    private void Email_textFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Email_textFocusLost
+        if(Email_text.getText().equals(""))
+            Email_text.setText("Enter email");
+    }//GEN-LAST:event_Email_textFocusLost
+
     /**
      * @param args the command line arguments
      */
@@ -296,11 +335,13 @@ public class Create_User extends javax.swing.JFrame {
     private javax.swing.JTextField Balance_text;
     private javax.swing.JButton Cancel;
     private javax.swing.JButton Create_User;
+    private javax.swing.JTextField Email_text;
     private javax.swing.JTextField PIN_text;
     private javax.swing.JButton Reset;
     private javax.swing.JTextField Username_text;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
