@@ -62,7 +62,7 @@ public class ChoiceButtons extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Deposit.setBackground(new java.awt.Color(0, 51, 255));
-        Deposit.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        Deposit.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Deposit.setForeground(new java.awt.Color(255, 255, 255));
         Deposit.setText("Deposit");
         Deposit.setToolTipText("Click to Deposit Money");
@@ -85,7 +85,7 @@ public class ChoiceButtons extends javax.swing.JFrame {
         Header.setName(""); // NOI18N
 
         Balance_inquiry.setBackground(new java.awt.Color(0, 51, 255));
-        Balance_inquiry.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        Balance_inquiry.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Balance_inquiry.setForeground(new java.awt.Color(255, 255, 255));
         Balance_inquiry.setText("Balance Inquiry");
         Balance_inquiry.setToolTipText("Click to know available balance");
@@ -98,7 +98,7 @@ public class ChoiceButtons extends javax.swing.JFrame {
         });
 
         PIN_change.setBackground(new java.awt.Color(0, 51, 255));
-        PIN_change.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        PIN_change.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         PIN_change.setForeground(new java.awt.Color(255, 255, 255));
         PIN_change.setText("PIN Change");
         PIN_change.setToolTipText("Click here to change your pin");
@@ -111,7 +111,7 @@ public class ChoiceButtons extends javax.swing.JFrame {
         });
 
         Money_transfer.setBackground(new java.awt.Color(0, 51, 255));
-        Money_transfer.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        Money_transfer.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Money_transfer.setForeground(new java.awt.Color(255, 255, 255));
         Money_transfer.setText("Money Transfer");
         Money_transfer.setToolTipText("Click to Transfer money");
@@ -124,7 +124,7 @@ public class ChoiceButtons extends javax.swing.JFrame {
         });
 
         Exit.setBackground(new java.awt.Color(0, 51, 255));
-        Exit.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        Exit.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Exit.setForeground(new java.awt.Color(255, 255, 255));
         Exit.setText("Exit");
         Exit.setToolTipText("Click here to exit");
@@ -137,7 +137,7 @@ public class ChoiceButtons extends javax.swing.JFrame {
         });
 
         Withdrawal.setBackground(new java.awt.Color(0, 51, 255));
-        Withdrawal.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        Withdrawal.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Withdrawal.setForeground(new java.awt.Color(255, 255, 255));
         Withdrawal.setText("Withdrawal");
         Withdrawal.setToolTipText("Click to Withdraw Money");
@@ -150,7 +150,7 @@ public class ChoiceButtons extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-        jLabel1.setText("SAAD ©");
+        jLabel1.setText("SBM ©");
         jLabel1.setToolTipText("Copyright");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
