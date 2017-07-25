@@ -43,11 +43,11 @@ public class MoneyTransfer extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Transfer_label.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Transfer_label.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Transfer_label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Transfer_label.setText("Transfer To :");
 
-        Payee.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Payee.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Payee.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Payee.setText("Enter the Username");
         Payee.setToolTipText("Please enter the username");
@@ -65,11 +65,11 @@ public class MoneyTransfer extends javax.swing.JFrame {
             }
         });
 
-        Amount_label.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Amount_label.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Amount_label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Amount_label.setText("Amount :");
 
-        Amount.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Amount.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Amount.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Amount.setText("Enter the amount");
         Amount.setToolTipText("Enter the amount to be transferred");
@@ -88,10 +88,10 @@ public class MoneyTransfer extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-        jLabel3.setText("SAAD ©");
+        jLabel3.setText("SBM ©");
         jLabel3.setToolTipText("Copyright");
 
-        Transfer.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Transfer.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Transfer.setText("Transfer");
         Transfer.setToolTipText("Click here to transfer");
         Transfer.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +100,7 @@ public class MoneyTransfer extends javax.swing.JFrame {
             }
         });
 
-        Cancel.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Cancel.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Cancel.setText("Cancel");
         Cancel.setToolTipText("Click here to cancel the transaction");
         Cancel.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +109,7 @@ public class MoneyTransfer extends javax.swing.JFrame {
             }
         });
 
-        Reset.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Reset.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Reset.setText("Reset");
         Reset.setToolTipText("Click here to reset the values");
         Reset.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +128,7 @@ public class MoneyTransfer extends javax.swing.JFrame {
         Header.setDoubleBuffered(true);
         Header.setName(""); // NOI18N
 
-        Back.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Back.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Back.setText("Back");
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

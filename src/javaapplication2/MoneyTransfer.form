@@ -88,7 +88,7 @@
     <Component class="javax.swing.JLabel" name="Transfer_label">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
         <Property name="text" type="java.lang.String" value="Transfer To :"/>
@@ -97,7 +97,7 @@
     <Component class="javax.swing.JTextField" name="Payee">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Enter the Username"/>
@@ -112,7 +112,7 @@
     <Component class="javax.swing.JLabel" name="Amount_label">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
         <Property name="text" type="java.lang.String" value="Amount :"/>
@@ -121,7 +121,7 @@
     <Component class="javax.swing.JTextField" name="Amount">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Enter the amount"/>
@@ -138,14 +138,14 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="14" style="3"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="SAAD &#xa9;"/>
+        <Property name="text" type="java.lang.String" value="SBM &#xa9;"/>
         <Property name="toolTipText" type="java.lang.String" value="Copyright"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="Transfer">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Transfer"/>
         <Property name="toolTipText" type="java.lang.String" value="Click here to transfer"/>
@@ -157,7 +157,7 @@
     <Component class="javax.swing.JButton" name="Cancel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cancel"/>
         <Property name="toolTipText" type="java.lang.String" value="Click here to cancel the transaction"/>
@@ -169,7 +169,7 @@
     <Component class="javax.swing.JButton" name="Reset">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Reset"/>
         <Property name="toolTipText" type="java.lang.String" value="Click here to reset the values"/>
@@ -204,7 +204,7 @@
     <Component class="javax.swing.JButton" name="Back">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>
