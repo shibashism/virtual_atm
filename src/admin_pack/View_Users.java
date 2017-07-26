@@ -5,6 +5,13 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javaapplication2.LoginPage;
+import javax.swing.JButton;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class View_Users extends javax.swing.JFrame {
 
@@ -69,32 +76,44 @@ public class View_Users extends javax.swing.JFrame {
                 BackActionPerformed(evt);
             }
         });
+        
+        JButton ViewUserDetails = new JButton("View User Details");
+        ViewUserDetails.setToolTipText("Click here for detailed view of users");
+        ViewUserDetails.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		DetailedView(arg0);
+        	}
+        });
+        ViewUserDetails.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 18));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(148, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(100)
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
+        				.addGroup(layout.createSequentialGroup()
+        					.addComponent(Back, GroupLayout.PREFERRED_SIZE, 179, GroupLayout.PREFERRED_SIZE)
+        					.addGap(67)
+        					.addComponent(ViewUserDetails, GroupLayout.PREFERRED_SIZE, 204, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.RELATED, 3, Short.MAX_VALUE)
+        					.addComponent(Exit, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 692, GroupLayout.PREFERRED_SIZE))
+        			.addGap(148))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 33, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 411, GroupLayout.PREFERRED_SIZE)
+        			.addGap(41)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(Back, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(Exit, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(ViewUserDetails, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
+        			.addGap(33))
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -108,6 +127,12 @@ public class View_Users extends javax.swing.JFrame {
         new admin_page().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BackActionPerformed
+    
+    private void DetailedView(ActionEvent evt){
+    	/**
+    	 * This function will show all the details from the UserInfo table.
+    	 */
+    }
 
     /**
      * @param args the command line arguments
@@ -149,5 +174,4 @@ public class View_Users extends javax.swing.JFrame {
     private javax.swing.JButton Exit;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    // End of variables declaration//GEN-END:variables
 }
