@@ -61,6 +61,8 @@ public class LoginPage extends javax.swing.JFrame {
         Password = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -140,6 +142,18 @@ public class LoginPage extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jButton1.setText("New User Form");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setText("Don't have an account? Sign up -->");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -157,10 +171,17 @@ public class LoginPage extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(248, 248, 248)
-                .addComponent(Reset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(203, 203, 203)
-                .addComponent(Login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(56, 56, 56)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(248, 248, 248)
+                        .addComponent(Reset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(203, 203, 203)
+                        .addComponent(Login, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(193, 193, 193))
         );
         layout.setVerticalGroup(
@@ -180,7 +201,11 @@ public class LoginPage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -195,7 +220,6 @@ public class LoginPage extends javax.swing.JFrame {
             else
             {
                 LoginPage.user=Username.getText();
-                //this.pin=Integer.parseInt(Password.getText());
                 LoginPage.pin=Integer.parseInt(new String(Password.getPassword()));
                 if(LoginPage.user.equals("admin")&&LoginPage.pin==admin_pin)
                 {
@@ -205,10 +229,10 @@ public class LoginPage extends javax.swing.JFrame {
                 else{
                 String query="select username,pin,balance,email from userdata where username='"+user+"' and pin="+pin;
                             sDate = Calendar.getInstance().get(Calendar.YEAR) + "-" 
-                                            + (c.getInstance().get(Calendar.MONTH)+1)
-                                            + "-" + c.getInstance().get(Calendar.DAY_OF_MONTH) 
-                                            + " at " + c.getInstance().get(Calendar.HOUR_OF_DAY) 
-                                            + ":" + c.getInstance().get(Calendar.MINUTE)+ ":" + c.getInstance().get(Calendar.SECOND)+ ":" + c.getInstance().get(Calendar.MILLISECOND);
+                                            + (Calendar.getInstance().get(Calendar.MONTH)+1)
+                                            + "-" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH) 
+                                            + " at " + Calendar.getInstance().get(Calendar.HOUR_OF_DAY) 
+                                            + ":" + Calendar.getInstance().get(Calendar.MINUTE)+ ":" + Calendar.getInstance().get(Calendar.SECOND)+ ":" + Calendar.getInstance().get(Calendar.MILLISECOND);
                     try {	
                                 java.sql.ResultSet rs= st.executeQuery(query);
                                 rs.absolute(1);
@@ -269,6 +293,11 @@ public class LoginPage extends javax.swing.JFrame {
             Password.setText("Enter Password");
     }//GEN-LAST:event_PasswordFocusLost
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new New_User_Form().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -310,8 +339,10 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JPasswordField Password;
     private javax.swing.JButton Reset;
     private javax.swing.JTextField Username;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
