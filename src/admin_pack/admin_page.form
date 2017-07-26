@@ -65,7 +65,7 @@
     <Component class="javax.swing.JButton" name="Create">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Create User"/>
       </Properties>
@@ -76,7 +76,7 @@
     <Component class="javax.swing.JButton" name="Delete">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Delete User"/>
       </Properties>
@@ -87,7 +87,7 @@
     <Component class="javax.swing.JButton" name="View">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="View Users"/>
       </Properties>
@@ -121,7 +121,7 @@
     <Component class="javax.swing.JButton" name="Exit">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Trebuchet MS" size="18" style="3"/>
+          <Font name="Trebuchet MS" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Exit"/>
       </Properties>

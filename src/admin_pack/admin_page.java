@@ -1,9 +1,6 @@
 package admin_pack;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import javaapplication2.LoginPage;
 
 public class admin_page extends javax.swing.JFrame {
@@ -32,7 +29,7 @@ public class admin_page extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Create.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Create.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Create.setText("Create User");
         Create.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -40,7 +37,7 @@ public class admin_page extends javax.swing.JFrame {
             }
         });
 
-        Delete.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Delete.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Delete.setText("Delete User");
         Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -48,7 +45,7 @@ public class admin_page extends javax.swing.JFrame {
             }
         });
 
-        View.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        View.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         View.setText("View Users");
         View.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +63,7 @@ public class admin_page extends javax.swing.JFrame {
         Header.setDoubleBuffered(true);
         Header.setName(""); // NOI18N
 
-        Exit.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        Exit.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Exit.setText("Exit");
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
