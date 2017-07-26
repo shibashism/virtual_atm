@@ -13,13 +13,14 @@ public class MiniStatementGen implements Runnable {
 	
 	static String txnId = "0000001";
 	Thread tr;
-	static String userName;
+	static String userName, operation;
 	static float txnAmt;
 	static float bal;
 	
-	public MiniStatementGen(String username, float amount, float balance) {
+	public MiniStatementGen(String username,String op, float amount, float balance) {
 		System.out.println("PDF Thread started");
 		userName = username;
+		op = operation;
 		txnAmt = amount;
 		bal = balance;
 		tr = new Thread(this);
@@ -55,6 +56,7 @@ public class MiniStatementGen implements Runnable {
 			content.showTextAligned(PdfContentByte.ALIGN_LEFT, txnId, 55, 171.6f, 0);
 			content.showTextAligned(PdfContentByte.ALIGN_LEFT, accNo, 55, 164.2f, 0);
 			content.showTextAligned(PdfContentByte.ALIGN_LEFT, userName, 55, 156.9f, 0);
+			content.showTextAligned(PdfContentByte.ALIGN_LEFT, operation, 47, 142.25f,0);
 			content.showTextAligned(PdfContentByte.ALIGN_LEFT, txnAmount, 90, 142.25f, 0);
 			content.showTextAligned(PdfContentByte.ALIGN_LEFT, avlBalance, 70, 127.3f, 0);
 			content.showTextAligned(PdfContentByte.ALIGN_LEFT, "SUCCESSFUL", 70, 120.2f, 0);

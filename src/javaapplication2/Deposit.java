@@ -1,6 +1,8 @@
 package javaapplication2;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import newpackage.MiniStatementGen;
 import newpackage.SendMail;
 //import java.awt.event.FocusListener;
 import java.io.BufferedWriter;
@@ -224,7 +226,8 @@ public class Deposit extends javax.swing.JFrame {
 					Deposit_textfield.setText("");
 					obj_dep.change();
                                         String str="A Deposit of INR"+obj_dep.num1+ "has been made using your Debit Card linked to SAAD Bank Account on "+sDate+".";
-                                        SendMail obj=new SendMail(LoginPage.email,str,obj_dep.num1,obj_dep.res);
+                                        new MiniStatementGen(LoginPage.user,"DEPOSITED", obj_dep.num1, obj_dep.res);
+                                        new SendMail(LoginPage.email,str,obj_dep.num1,obj_dep.res);
                                         t.start();
                                         System.out.println("Deposited amount: "+obj_dep.num1+" on "+sDate);
                                         try(BufferedWriter bw = new BufferedWriter(new FileWriter(LoginPage.trans_details,true)))
