@@ -259,11 +259,11 @@ public class MoneyTransfer extends javax.swing.JFrame {
                     e.printStackTrace();
                 }
                 javax.swing.JOptionPane.showMessageDialog(rootPane, "Transaction Successfull", "Success", getDefaultCloseOperation());
-                String sDate = c.getInstance().get(Calendar.YEAR) + "-" 
-							+ (c.getInstance().get(Calendar.MONTH)+1)
-							+ "-" + c.getInstance().get(Calendar.DAY_OF_MONTH) 
-							+ " at " + c.getInstance().get(Calendar.HOUR_OF_DAY) 
-							+ ":" + c.getInstance().get(Calendar.MINUTE)+ ":" + c.getInstance().get(Calendar.SECOND)+ ":" + c.getInstance().get(Calendar.MILLISECOND);
+                String sDate = Calendar.getInstance().get(Calendar.YEAR) + "-" 
+							+ (Calendar.getInstance().get(Calendar.MONTH)+1)
+							+ "-" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH) 
+							+ " at " + Calendar.getInstance().get(Calendar.HOUR_OF_DAY) 
+							+ ":" + Calendar.getInstance().get(Calendar.MINUTE)+ ":" + Calendar.getInstance().get(Calendar.SECOND)+ ":" + Calendar.getInstance().get(Calendar.MILLISECOND);
                 try(BufferedWriter bw = new BufferedWriter(new FileWriter(LoginPage.trans_details,true)))
                 {
                     bw.append("Username: "+LoginPage.user+" transferred amount: "+Integer.parseInt(Amount.getText())+" to "+Payee.getText()+" on "+sDate);
@@ -293,42 +293,7 @@ public class MoneyTransfer extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BackActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    /*public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-/*        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MoneyTransfer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MoneyTransfer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MoneyTransfer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MoneyTransfer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MoneyTransfer().setVisible(true);
-            }
-        });
-    }*/
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Amount;
     private javax.swing.JLabel Amount_label;

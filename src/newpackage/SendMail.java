@@ -1,8 +1,13 @@
 package newpackage;
 
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 
 import java.util.*;
 import javaapplication2.LoginPage;
@@ -42,25 +47,42 @@ public class SendMail implements Runnable {
 		});
 
 		try {
-
 			Message msg = new MimeMessage(session);
-			msg.setFrom(new InternetAddress("saadvatm@gmail.com"));
-
+			msg.setFrom(new InternetAddress(from));
+			
 			msg.addRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+			
+			msg.setSubject("Transaction Alert");
+			
+			
+			BodyPart msgPart = new MimeBodyPart();
+			
+			
+			Multipart multipart = new MimeMultipart();
+			multipart.addBodyPart(msgPart);
+			String fileName = "D:/X-Coder0000001.pdf";
+			DataSource source = new FileDataSource(fileName);
+			msgPart.setDataHandler(new DataHandler(source));
+			msgPart.setFileName("MiniStatement.pdf");
 
-			msg.setSubject("Transaction alert...saad@virtualatm.co.in");
-			msg.setText("Dear Customer,\n" + "\n" + "Greetings from VTM Bank.\n" + "\n" + str1 + "\n"
+
+			msgPart = new MimeBodyPart();
+			msgPart.setText("Dear Customer,\n" + "\n" + "Greetings from VTM Bank.\n" + "\n" + str1 + "\n"
 					+ "The Available Balance in your account is INR " + avlbal + ".\n" + "\n"
 					+ "In case you have not made this transaction, please call our Customer Care.\n" + "\n"
 					+ "NEVER SHARE your Card number, CVV, PIN, OTP, Internet Banking User ID, Password or URN with anyone, even if the caller claims to be a bank employee. Sharing these details can lead to unauthorised access to your account.\n"
 					+ "\n" + "Looking forward to more opportunities to be of service to you.\n" + "\n" + "Sincerely,\n"
 					+ "\n" + "Customer Service Team\n" + "SAAD Bank Limited\n" + "\n"
 					+ "This is an auto generated e-mail. Please do not reply.");
-
+			
+			multipart.addBodyPart(msgPart);
+			msg.setContent(multipart);
+			
 			Transport.send(msg);
-
+			
 			System.out.println("Message sent successfully....");
-			System.out.println("Method ended");
+
+			System.out.println("Send mail Method ended");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
