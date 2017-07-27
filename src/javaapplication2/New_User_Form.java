@@ -67,7 +67,7 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
         jLabel6 = new javax.swing.JLabel();
         Username_text = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -180,11 +180,6 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
         jLabel7.setText("SBM ©");
         jLabel7.setToolTipText("Copyright");
 
-        jDateChooser1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jDateChooser1.setMaxSelectableDate(new java.util.Date(4102428662000L));
-        jDateChooser1.setMaximumSize(new java.awt.Dimension(200, 200));
-        jDateChooser1.setMinSelectableDate(new java.util.Date(-1577940738000L));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -219,7 +214,7 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(218, 218, 218))
             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -248,7 +243,7 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Register_User, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -303,7 +298,7 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
     private void Register_UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register_UserActionPerformed
         try
         {
-            date = jDateChooser1.getDate();
+            date = jDateChooser2.getDate();
             strDate=DateFormat.getDateInstance().format(date);
             if(!Firstname_text.getText().equals("Enter Firstname") || !Lastname_text.getText().equals("Enter Lastname") || !Firstname_text.getText().equals("Enter Address"))
             {
@@ -389,7 +384,7 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
     private javax.swing.JButton Register_User;
     private javax.swing.JTextField Username_text;
     private javax.swing.JButton jButton2;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
