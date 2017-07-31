@@ -13,12 +13,12 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class View_Users extends javax.swing.JFrame {
+public class View_Users_List extends javax.swing.JFrame {
 
     /**
      * Creates new form View_Users
      */
-    public View_Users() {
+    public View_Users_List() {
         initComponents();
     }
     public String printTextArea()
@@ -137,6 +137,8 @@ public class View_Users extends javax.swing.JFrame {
     	/**
     	 * This function will show all the details from the UserInfo table.
     	 */
+    	new admin_pack.View_User_Details().setVisible(true);
+    	this.dispose();
     }
 
     /**
