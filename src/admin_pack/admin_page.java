@@ -118,7 +118,7 @@ public class admin_page extends javax.swing.JFrame {
     }//GEN-LAST:event_CreateActionPerformed
 
     private void ViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewActionPerformed
-        new View_Users().setVisible(true);
+        new View_Users_List().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ViewActionPerformed
 
