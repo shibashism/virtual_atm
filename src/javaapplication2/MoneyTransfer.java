@@ -43,14 +43,11 @@ public class MoneyTransfer extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
 
         Transfer_label.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Transfer_label.setForeground(new java.awt.Color(255, 255, 255));
         Transfer_label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Transfer_label.setText("Transfer To :");
-        getContentPane().add(Transfer_label);
-        Transfer_label.setBounds(210, 148, 140, 35);
 
         Payee.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Payee.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -65,15 +62,11 @@ public class MoneyTransfer extends javax.swing.JFrame {
                 PayeeFocusLost(evt);
             }
         });
-        getContentPane().add(Payee);
-        Payee.setBounds(389, 148, 185, 35);
 
         Amount_label.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Amount_label.setForeground(new java.awt.Color(255, 255, 255));
         Amount_label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Amount_label.setText("Amount :");
-        getContentPane().add(Amount_label);
-        Amount_label.setBounds(210, 252, 140, 35);
 
         Amount.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Amount.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -88,14 +81,10 @@ public class MoneyTransfer extends javax.swing.JFrame {
                 AmountFocusLost(evt);
             }
         });
-        getContentPane().add(Amount);
-        Amount.setBounds(389, 252, 185, 35);
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
         jLabel3.setText("SBM ©");
         jLabel3.setToolTipText("Copyright");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(883, 523, 57, 23);
 
         Transfer.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Transfer.setText("Transfer");
@@ -113,8 +102,6 @@ public class MoneyTransfer extends javax.swing.JFrame {
                 TransferActionPerformed(evt);
             }
         });
-        getContentPane().add(Transfer);
-        Transfer.setBounds(582, 341, 173, 46);
 
         Cancel.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Cancel.setText("Cancel");
@@ -132,8 +119,6 @@ public class MoneyTransfer extends javax.swing.JFrame {
                 CancelActionPerformed(evt);
             }
         });
-        getContentPane().add(Cancel);
-        Cancel.setBounds(210, 414, 179, 46);
 
         Reset.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Reset.setText("Reset");
@@ -151,8 +136,6 @@ public class MoneyTransfer extends javax.swing.JFrame {
                 ResetActionPerformed(evt);
             }
         });
-        getContentPane().add(Reset);
-        Reset.setBounds(582, 414, 171, 46);
 
         Header.setBackground(new java.awt.Color(0, 204, 153));
         Header.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
@@ -163,8 +146,6 @@ public class MoneyTransfer extends javax.swing.JFrame {
         Header.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Header.setDoubleBuffered(true);
         Header.setName(""); // NOI18N
-        getContentPane().add(Header);
-        Header.setBounds(0, 0, 940, 80);
 
         Back.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Back.setText("Back");
@@ -181,13 +162,70 @@ public class MoneyTransfer extends javax.swing.JFrame {
                 BackActionPerformed(evt);
             }
         });
-        getContentPane().add(Back);
-        Back.setBounds(210, 341, 179, 46);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Devendra M Naik\\Downloads\\blue-striped-wall-and-wood-flooring-abstract-hd-wallpaper-2560x1440-5500.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 940, 538);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(Transfer_label, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(Payee, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(193, 193, 193)
+                .addComponent(Transfer, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(582, 582, 582)
+                .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(883, 883, 883)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(Amount_label, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(389, 389, 389)
+                .addComponent(Amount, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(148, 148, 148)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Transfer_label, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Payee, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(158, 158, 158)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Transfer, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(523, 523, 523)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(414, 414, 414)
+                .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(252, 252, 252)
+                .addComponent(Amount_label, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(252, 252, 252)
+                .addComponent(Amount, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
