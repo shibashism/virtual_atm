@@ -1,13 +1,12 @@
 package javaapplication2;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Timer;
-//import java.util.regex.Matcher;
-//import java.util.regex.Pattern;
 
 public class PIN_Change extends javax.swing.JFrame {
 
@@ -39,6 +38,7 @@ public class PIN_Change extends javax.swing.JFrame {
                 }
             }
         });
+        setResizable(false);
     }
 
     /**
@@ -52,9 +52,10 @@ public class PIN_Change extends javax.swing.JFrame {
 
         Old_Pin_label = new javax.swing.JLabel();
         New_Pin_label = new javax.swing.JLabel();
+        Change_PIN = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         Old_PIN = new javax.swing.JPasswordField();
         New_PIN = new javax.swing.JPasswordField();
-        Change_PIN = new javax.swing.JButton();
         Reset = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         Header = new javax.swing.JLabel();
@@ -65,17 +66,39 @@ public class PIN_Change extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Old_Pin_label.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        Old_Pin_label.setForeground(new java.awt.Color(255, 255, 255));
         Old_Pin_label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Old_Pin_label.setText("Old PIN :");
         Old_Pin_label.setToolTipText("");
 
         New_Pin_label.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        New_Pin_label.setForeground(new java.awt.Color(255, 255, 255));
         New_Pin_label.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         New_Pin_label.setText("New PIN :");
+
+        Change_PIN.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        Change_PIN.setText("Change PIN");
+        Change_PIN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Change_PINMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Change_PINMouseExited(evt);
+            }
+        });
+        Change_PIN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Change_PINActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Devendra M Naik\\Downloads\\Barn wood wallpaper 02 HD Desktop Wallpapers.jpg")); // NOI18N
+        jLabel1.setText("jLabel1");
 
         Old_PIN.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
         Old_PIN.setText("Enter your Old PIN");
         Old_PIN.setToolTipText("Please enter your Old PIN");
+        Old_PIN.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         Old_PIN.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 Old_PINFocusGained(evt);
@@ -84,15 +107,11 @@ public class PIN_Change extends javax.swing.JFrame {
                 Old_PINFocusLost(evt);
             }
         });
-        Old_PIN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Old_PINActionPerformed(evt);
-            }
-        });
 
         New_PIN.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
         New_PIN.setText("Enter your New PIN");
         New_PIN.setToolTipText("Please enter your New PIN");
+        New_PIN.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         New_PIN.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 New_PINFocusGained(evt);
@@ -102,16 +121,16 @@ public class PIN_Change extends javax.swing.JFrame {
             }
         });
 
-        Change_PIN.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        Change_PIN.setText("Change PIN");
-        Change_PIN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Change_PINActionPerformed(evt);
-            }
-        });
-
         Reset.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Reset.setText("Reset");
+        Reset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ResetMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ResetMouseExited(evt);
+            }
+        });
         Reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ResetActionPerformed(evt);
@@ -119,20 +138,28 @@ public class PIN_Change extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-        jLabel3.setText("SBM ©");
+        jLabel3.setText("DMN ©");
 
         Header.setBackground(new java.awt.Color(0, 204, 153));
-        Header.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
+        Header.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        Header.setForeground(new java.awt.Color(255, 255, 255));
         Header.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Header.setText("Welcome To SBM");
         Header.setToolTipText("");
-        Header.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Header.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Header.setDoubleBuffered(true);
         Header.setName(""); // NOI18N
 
         Back.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Back.setText("Back");
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BackMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BackMouseExited(evt);
+            }
+        });
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
@@ -141,12 +168,23 @@ public class PIN_Change extends javax.swing.JFrame {
 
         Cancel.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Cancel.setText("Cancel");
+        Cancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CancelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CancelMouseExited(evt);
+            }
+        });
         Cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelActionPerformed(evt);
             }
         });
 
+        jProgressBar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jProgressBar1.setString("Processing your transaction");
+        jProgressBar1.setStringPainted(true);
         jProgressBar1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jProgressBar1StateChanged(evt);
@@ -157,89 +195,91 @@ public class PIN_Change extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(220, 220, 220)
+                .addComponent(Old_Pin_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
+                .addComponent(Old_PIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(220, 220, 220)
+                .addComponent(New_Pin_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
+                .addComponent(New_PIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(314, 314, 314)
+                .addComponent(Change_PIN, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(890, 890, 890)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(Header, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 140, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Old_Pin_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(New_Pin_label, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(59, 59, 59)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(New_PIN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Old_PIN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(269, 269, 269))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(Cancel, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                                    .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(318, 318, 318)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Change_PIN, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(80, 80, 80))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(660, 660, 660)
+                .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Old_Pin_label, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Old_PIN, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(New_PIN, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(New_Pin_label, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(88, 88, 88)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Change_PIN, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
+                .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(24, 24, 24)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(New_Pin_label, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(New_PIN, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Change_PIN, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(390, 390, 390)
+                .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Old_PINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Old_PINActionPerformed
-       
-    }//GEN-LAST:event_Old_PINActionPerformed
-
     private void Old_PINFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Old_PINFocusGained
-        if(new String(Old_PIN.getPassword()).equals("Enter your Old PIN"))
+        if(new String(Old_PIN.getPassword()).equals("Enter your Old PIN")){
             Old_PIN.setText("");
+            Old_PIN.setBackground(Color.decode("#74c11d"));
+        }
     }//GEN-LAST:event_Old_PINFocusGained
 
     private void Old_PINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Old_PINFocusLost
-        if(new String(Old_PIN.getPassword()).equals(""))
+        if(new String(Old_PIN.getPassword()).trim().equals("")){
             Old_PIN.setText("Enter your Old PIN");
+            Old_PIN.setBackground(Color.decode("#ffffff"));
+        }
     }//GEN-LAST:event_Old_PINFocusLost
 
     private void New_PINFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_New_PINFocusGained
-        if(new String(New_PIN.getPassword()).equals("Enter your New PIN"))
+        if(new String(New_PIN.getPassword()).equals("Enter your New PIN")){
             New_PIN.setText("");
+            New_PIN.setBackground(Color.decode("#74c11d"));
+        }
     }//GEN-LAST:event_New_PINFocusGained
 
     private void New_PINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_New_PINFocusLost
-        if(new String(New_PIN.getPassword()).equals(""))
+        if(new String(New_PIN.getPassword()).trim().equals("")){
             New_PIN.setText("Enter your New PIN");
+            New_PIN.setBackground(Color.decode("#ffffff"));
+        }
     }//GEN-LAST:event_New_PINFocusLost
 
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
@@ -248,11 +288,8 @@ public class PIN_Change extends javax.swing.JFrame {
     }//GEN-LAST:event_ResetActionPerformed
 
     private void Change_PINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Change_PINActionPerformed
-         //Pattern p = Pattern.compile("[0-9]", Pattern.CASE_INSENSITIVE);
-         //Matcher m1 = p.matcher(new String(Old_PIN.getPassword()));
-         //Matcher m2 = p.matcher(new String(New_PIN.getPassword()));
-         String pass1=new String(Old_PIN.getPassword());
-         String pass2=new String(New_PIN.getPassword());
+         String pass1=new String(Old_PIN.getPassword()).trim();
+         String pass2=new String(New_PIN.getPassword()).trim();
          int row;
          if(pass1.equals("Enter your Old PIN")||pass2.equals("Enter your New PIN"))
          {
@@ -260,36 +297,34 @@ public class PIN_Change extends javax.swing.JFrame {
          }
          else
          {
-            //if(m1.hitEnd()||m2.hitEnd())
-           // {
-            if(pass1.equals(pass2))
+            if(pass1.matches("[0-9]+")||pass2.matches("[0-9]+"))
             {
-               javax.swing.JOptionPane.showMessageDialog(rootPane, "Old PIN and New PIN is same", "Error Same PIN", getDefaultCloseOperation());
+                if(pass1.equals(pass2))
+                {
+                   javax.swing.JOptionPane.showMessageDialog(rootPane, "Old PIN and New PIN is same", "Error Same PIN", getDefaultCloseOperation());
+                }
+                else
+                {
+                   if(Integer.parseInt(pass1)==LoginPage.pin)
+                   {
+                       try {
+                           row=LoginPage.st.executeUpdate("update userdata set pin="+Integer.parseInt(pass2)+" where username='"+LoginPage.user+"'");
+                       } catch (SQLException ex) {
+                           Logger.getLogger(PIN_Change.class.getName()).log(Level.SEVERE, null, ex);
+                       }
+                       javax.swing.JOptionPane.showMessageDialog(rootPane, "PIN was changed successfully!\nPlease do remember your New PIN", "Success", getDefaultCloseOperation());
+                       new ChoiceButtons().setVisible(true);
+                       this.dispose();
+                   }
+                   else
+                   {
+                       javax.swing.JOptionPane.showMessageDialog(rootPane, "You have entered wrong credentials", "Error", getDefaultCloseOperation());
+                   }
+                }
             }
             else
-            {
-               if(Integer.parseInt(pass1)==LoginPage.pin)
-               {
-                   try {
-                       row=LoginPage.st.executeUpdate("update userdata set pin="+Integer.parseInt(pass2)+" where username='"+LoginPage.user+"'");
-                   } catch (SQLException ex) {
-                       Logger.getLogger(PIN_Change.class.getName()).log(Level.SEVERE, null, ex);
-                   }
-                   javax.swing.JOptionPane.showMessageDialog(rootPane, "PIN was changed successfully!\nPlease do remember your New PIN", "Success", getDefaultCloseOperation());
-                   new ChoiceButtons().setVisible(true);
-                   this.dispose();
-               }
-               else
-               {
-                   javax.swing.JOptionPane.showMessageDialog(rootPane, "You have entered wrong credentials", "Error", getDefaultCloseOperation());
-               }
-            }
-         //  }
-          //  else
-          //  {
-          //      javax.swing.JOptionPane.showMessageDialog(rootPane, "You have entered wrong credentials", "Error", getDefaultCloseOperation());
-          ///  }
-         }
+                javax.swing.JOptionPane.showMessageDialog(rootPane, "You have entered wrong credentials", "Error", getDefaultCloseOperation());
+        }        
     }//GEN-LAST:event_Change_PINActionPerformed
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
@@ -310,6 +345,38 @@ public class PIN_Change extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(rootPane, "PIN Changed successfully", "Success",getDefaultCloseOperation());
         }
     }//GEN-LAST:event_jProgressBar1StateChanged
+
+    private void BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseEntered
+        Back.setBackground(Color.decode("#2cdd9c"));
+    }//GEN-LAST:event_BackMouseEntered
+
+    private void BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseExited
+        Back.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_BackMouseExited
+
+    private void Change_PINMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Change_PINMouseEntered
+        Change_PIN.setBackground(Color.GREEN);
+    }//GEN-LAST:event_Change_PINMouseEntered
+
+    private void Change_PINMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Change_PINMouseExited
+        Change_PIN.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_Change_PINMouseExited
+
+    private void CancelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelMouseEntered
+        Cancel.setBackground(Color.red);
+    }//GEN-LAST:event_CancelMouseEntered
+
+    private void CancelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelMouseExited
+        Cancel.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_CancelMouseExited
+
+    private void ResetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResetMouseEntered
+        Reset.setBackground(Color.decode("#2cdd9c"));
+    }//GEN-LAST:event_ResetMouseEntered
+
+    private void ResetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResetMouseExited
+        Reset.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_ResetMouseExited
 
     /**
      * @param args the command line arguments
@@ -356,6 +423,7 @@ public class PIN_Change extends javax.swing.JFrame {
     private javax.swing.JPasswordField Old_PIN;
     private javax.swing.JLabel Old_Pin_label;
     private javax.swing.JButton Reset;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables

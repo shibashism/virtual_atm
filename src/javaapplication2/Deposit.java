@@ -1,4 +1,5 @@
 package javaapplication2;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -50,6 +51,7 @@ public class Deposit extends javax.swing.JFrame {
                 }
             }
         });
+        setResizable(false);
     }
 
     /**
@@ -78,16 +80,20 @@ public class Deposit extends javax.swing.JFrame {
         Header = new javax.swing.JLabel();
         Back = new javax.swing.JButton();
         Cancel = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Reset = new javax.swing.JButton();
         jProgressBar1 = new javax.swing.JProgressBar();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Deposit.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Deposit.setText("Deposit");
-        Deposit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DepositActionPerformed(evt);
+        Deposit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DepositMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                DepositMouseExited(evt);
             }
         });
 
@@ -95,6 +101,7 @@ public class Deposit extends javax.swing.JFrame {
         Deposit_textfield.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Deposit_textfield.setText("Enter the amount");
         Deposit_textfield.setToolTipText("Please enter the amount to be deposited");
+        Deposit_textfield.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         Deposit_textfield.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 Deposit_textfieldFocusGained(evt);
@@ -103,28 +110,32 @@ public class Deposit extends javax.swing.JFrame {
                 Deposit_textfieldFocusLost(evt);
             }
         });
-        Deposit_textfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Deposit_textfieldActionPerformed(evt);
-            }
-        });
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-        jLabel1.setText("SBM ©");
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("DMN ©");
         jLabel1.setToolTipText("Copyright");
 
         Header.setBackground(new java.awt.Color(0, 204, 153));
-        Header.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
+        Header.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        Header.setForeground(new java.awt.Color(255, 255, 255));
         Header.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Header.setText("Welcome To SBM");
         Header.setToolTipText("");
-        Header.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Header.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Header.setDoubleBuffered(true);
         Header.setName(""); // NOI18N
 
         Back.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Back.setText("Back");
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BackMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BackMouseExited(evt);
+            }
+        });
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
@@ -133,18 +144,34 @@ public class Deposit extends javax.swing.JFrame {
 
         Cancel.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Cancel.setText("Cancel");
+        Cancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CancelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CancelMouseExited(evt);
+            }
+        });
         Cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelActionPerformed(evt);
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jButton1.setText("Reset");
-        jButton1.setToolTipText("Click here to Reset");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Reset.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        Reset.setText("Reset");
+        Reset.setToolTipText("Click here to Reset");
+        Reset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ResetMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ResetMouseExited(evt);
+            }
+        });
+        Reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ResetActionPerformed(evt);
             }
         });
 
@@ -157,109 +184,77 @@ public class Deposit extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Devendra M Naik\\Downloads\\wallp4.jpg")); // NOI18N
+        jLabel2.setText("jLabel2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
-            .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(376, 376, 376)
+                .addComponent(Deposit_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(188, 188, 188)
+                .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(188, 188, 188)
+                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(558, 558, 558)
+                .addComponent(Deposit, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(885, 885, 885)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(191, 191, 191)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Deposit, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(376, 376, 376)
-                        .addComponent(Deposit_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(558, 558, 558)
+                .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(101, 101, 101)
-                .addComponent(Deposit_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Deposit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(91, 91, 91)
+                .addComponent(Deposit_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(356, 356, 356)
+                .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(277, 277, 277)
+                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(276, 276, 276)
+                .addComponent(Deposit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(465, 465, 465)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(514, 514, 514)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(356, 356, 356)
+                .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Deposit_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Deposit_textfieldActionPerformed
-        
-    }//GEN-LAST:event_Deposit_textfieldActionPerformed
-
-    private void DepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepositActionPerformed
-        //Pattern p = Pattern.compile("[0-9]", Pattern.CASE_INSENSITIVE);
-        //Matcher m = p.matcher(Deposit_textfield.getText());
-        //m.find();
-        if(Deposit_textfield.getText().equals("Enter the amount"))
-			{
-				javax.swing.JOptionPane.showMessageDialog(rootPane, "Field cannot be blank", "Error Deposit", getDefaultCloseOperation());
-			}
-			else
-			{
-				if( Integer.parseInt(Deposit_textfield.getText())>0)// || m.hitEnd())
-				{
-					obj_dep.num1=Integer.parseInt(Deposit_textfield.getText());
-					obj_dep.res=LoginPage.bal+obj_dep.num1;
-					msg1();
-					LoginPage.bal=obj_dep.res;
-					Deposit_textfield.setText("");
-					obj_dep.change();
-                                        String str="A Deposit of INR"+obj_dep.num1+ "has been made using your Debit Card linked to SAAD Bank Account on "+sDate+".";
-
-                                        new MiniStatementGen(LoginPage.user,"DEPOSITED", obj_dep.num1, obj_dep.res);
-                                        new SendMail(LoginPage.email,str,obj_dep.num1,obj_dep.res);
-
-                                        t.start();
-                                        System.out.println("Deposited amount: "+obj_dep.num1+" on "+sDate);
-                                        try(BufferedWriter bw = new BufferedWriter(new FileWriter(LoginPage.trans_details,true)))
-                                        {
-                                            bw.append("Username: "+LoginPage.user+" Deposited amount: "+obj_dep.num1+" on "+obj_dep.sDate);
-                                            bw.newLine();
-                                        }
-                                        catch(IOException e)
-                                        {
-                                            e.printStackTrace();
-                                        }
-				}
-				else
-				{
-					javax.swing.JOptionPane.showMessageDialog(rootPane, "Value entered is invalid", "Error", getDefaultCloseOperation());
-                                        Deposit_textfield.setText("Enter the amount");
-				}
-			}
-    }//GEN-LAST:event_DepositActionPerformed
-
     private void Deposit_textfieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Deposit_textfieldFocusGained
-        if(Deposit_textfield.getText().equals("Enter the amount"))
+        if(Deposit_textfield.getText().equals("Enter the amount")){
             Deposit_textfield.setText("");
+            Deposit_textfield.setBackground(Color.decode("#74c11d"));
+        }
     }//GEN-LAST:event_Deposit_textfieldFocusGained
 
     private void Deposit_textfieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Deposit_textfieldFocusLost
-        if(Deposit_textfield.getText().equals(""))
+        if(Deposit_textfield.getText().trim().equals("")){
             Deposit_textfield.setText("Enter the amount");
+            Deposit_textfield.setBackground(Color.decode("#ffffff"));
+        }
     }//GEN-LAST:event_Deposit_textfieldFocusLost
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
@@ -272,9 +267,9 @@ public class Deposit extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_CancelActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
         Deposit_textfield.setText("Enter the amount");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ResetActionPerformed
 
     private void jProgressBar1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jProgressBar1StateChanged
         if(f==0)
@@ -284,6 +279,38 @@ public class Deposit extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(rootPane, "Transaction is successfull", "Success",getDefaultCloseOperation());
         }
     }//GEN-LAST:event_jProgressBar1StateChanged
+
+    private void BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseEntered
+        Back.setBackground(Color.decode("#2cdd9c"));
+    }//GEN-LAST:event_BackMouseEntered
+
+    private void BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseExited
+        Back.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_BackMouseExited
+
+    private void CancelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelMouseEntered
+        Cancel.setBackground(Color.red);
+    }//GEN-LAST:event_CancelMouseEntered
+
+    private void CancelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelMouseExited
+        Cancel.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_CancelMouseExited
+
+    private void DepositMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DepositMouseEntered
+        Deposit.setBackground(Color.GREEN);
+    }//GEN-LAST:event_DepositMouseEntered
+
+    private void DepositMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DepositMouseExited
+        Deposit.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_DepositMouseExited
+
+    private void ResetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResetMouseEntered
+        Reset.setBackground(Color.decode("#2cdd9c"));
+    }//GEN-LAST:event_ResetMouseEntered
+
+    private void ResetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResetMouseExited
+        Reset.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_ResetMouseExited
 
     /**
      * @param args the command line arguments
@@ -327,8 +354,9 @@ public class Deposit extends javax.swing.JFrame {
     private javax.swing.JButton Deposit;
     private javax.swing.JTextField Deposit_textfield;
     private javax.swing.JLabel Header;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Reset;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
     

@@ -1,20 +1,34 @@
 package admin_pack;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.sql.SQLException;
+import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedList;
 import javaapplication2.LoginPage;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javaapplication2.New_User_Form;
 
 public class Create_User extends javax.swing.JFrame {
 
     /**
      * Creates new form Create_User
      */
-    public Create_User() {
+    public Create_User(){
         initComponents();
+        setResizable(false);
     }
     public String user,email;
     public Integer bal;
+    ArrayList<Object> arr=new ArrayList<>();
+    HashSet hs;
+    ObjectInputStream ois;
+    LinkedList ll;
+    static public int count=0;
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,9 +50,16 @@ public class Create_User extends javax.swing.JFrame {
         Reset = new javax.swing.JButton();
         Email_text = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -63,22 +84,12 @@ public class Create_User extends javax.swing.JFrame {
                 Username_textFocusLost(evt);
             }
         });
-        Username_text.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Username_textActionPerformed(evt);
-            }
-        });
 
         PIN_text.setEditable(false);
         PIN_text.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         PIN_text.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         PIN_text.setText("Enter Password");
         PIN_text.setToolTipText("System generated password");
-        PIN_text.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PIN_textActionPerformed(evt);
-            }
-        });
 
         Balance_text.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Balance_text.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -89,11 +100,6 @@ public class Create_User extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 Balance_textFocusLost(evt);
-            }
-        });
-        Balance_text.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Balance_textActionPerformed(evt);
             }
         });
 
@@ -148,35 +154,66 @@ public class Create_User extends javax.swing.JFrame {
         jLabel4.setText("Email :");
         jLabel4.setToolTipText("Email Label");
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Username", "Name", "Address"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(207, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(147, 147, 147)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Create_User, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(150, 150, 150))
             .addGroup(layout.createSequentialGroup()
-                .addGap(255, 255, 255)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(79, 79, 79)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Email_text, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Username_text, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                        .addComponent(PIN_text)
-                        .addComponent(Balance_text)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(147, 147, 147)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Create_User, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(179, 179, 179)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(79, 79, 79)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Email_text, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Username_text)
+                                .addComponent(PIN_text)
+                                .addComponent(Balance_text, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,7 +234,7 @@ public class Create_User extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Balance_text, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
-                .addGap(69, 69, 69)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -205,7 +242,11 @@ public class Create_User extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Create_User, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(51, 51, 51))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
 
         pack();
@@ -223,28 +264,31 @@ public class Create_User extends javax.swing.JFrame {
         }
         else
         {
-            user=Username_text.getText();
-            bal=Integer.parseInt(Balance_text.getText());
-            Integer n = ThreadLocalRandom.current().nextInt(1000,9999);
-            PIN_text.setText(n.toString());
-            email=Email_text.getText();
-            String query1="insert into userdata values('"+user+"',"+Integer.parseInt(PIN_text.getText())+","+bal+",'"+email+"',0)";
-            try {
-                 LoginPage.st.executeUpdate(query1);
-            } catch (SQLException ex) {
-                Logger.getLogger(Create_User.class.getName()).log(Level.SEVERE, null, ex);
+            if(Username_text.getText().trim().matches("^[a-zA-Z][a-z0-9]+") && Balance_text.getText().trim().matches("[0-9]+") && Email_text.getText().trim().matches("^[a-z]+.+[a-z0-9]+@+[a-z]+.+[a-z]+"))
+            {
+                if(New_User_Form.count!=0)
+                    New_User_Form.count--;
+                user=Username_text.getText().trim();
+                bal=Integer.parseInt(Balance_text.getText().trim());
+                Integer n = ThreadLocalRandom.current().nextInt(1000,9999);
+                PIN_text.setText(n.toString());
+                email=Email_text.getText().trim();
+                String query1="insert into userdata values('"+user+"',"+Integer.parseInt(PIN_text.getText())+","+bal+",'"+email+"',0)";
+                try {
+                     LoginPage.st.executeUpdate(query1);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Create_User.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                javax.swing.JOptionPane.showMessageDialog(rootPane, "User successfully created.", "Success", getDefaultCloseOperation());
+                Username_text.setText("Enter Username");
+                Balance_text.setText("Enter Balance");
+                PIN_text.setText("Enter Password");
+                Email_text.setText("Enter email");
             }
-            javax.swing.JOptionPane.showMessageDialog(rootPane, "User successfully created.", "Success", getDefaultCloseOperation());
-            Username_text.setText("Enter Username");
-            Balance_text.setText("Enter Balance");
-            PIN_text.setText("Enter Password");
-            Email_text.setText("Enter email");
+            else
+                javax.swing.JOptionPane.showMessageDialog(rootPane, "Invalid Input","Error",getDefaultCloseOperation());
         }
     }//GEN-LAST:event_Create_UserActionPerformed
-
-    private void PIN_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PIN_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PIN_textActionPerformed
 
     private void Username_textFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Username_textFocusGained
         if(Username_text.getText().equals("Enter Username"))
@@ -252,7 +296,7 @@ public class Create_User extends javax.swing.JFrame {
     }//GEN-LAST:event_Username_textFocusGained
 
     private void Username_textFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Username_textFocusLost
-        if(Username_text.getText().equals(""))
+        if(Username_text.getText().trim().equals(""))
             Username_text.setText("Enter Username");
     }//GEN-LAST:event_Username_textFocusLost
 
@@ -262,7 +306,7 @@ public class Create_User extends javax.swing.JFrame {
     }//GEN-LAST:event_Balance_textFocusGained
 
     private void Balance_textFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Balance_textFocusLost
-        if(Balance_text.getText().equals(""))
+        if(Balance_text.getText().trim().equals(""))
             Balance_text.setText("Enter Balance");
     }//GEN-LAST:event_Balance_textFocusLost
 
@@ -270,14 +314,6 @@ public class Create_User extends javax.swing.JFrame {
        new admin_page().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BackActionPerformed
-
-    private void Balance_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Balance_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Balance_textActionPerformed
-
-    private void Username_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Username_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Username_textActionPerformed
 
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
         Username_text.setText("Enter Username");
@@ -291,9 +327,103 @@ public class Create_User extends javax.swing.JFrame {
     }//GEN-LAST:event_Email_textFocusGained
 
     private void Email_textFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Email_textFocusLost
-        if(Email_text.getText().equals(""))
+        if(Email_text.getText().trim().equals(""))
             Email_text.setText("Enter email");
     }//GEN-LAST:event_Email_textFocusLost
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+//        boolean cont=true;
+        
+//        try {
+//            ois=new ObjectInputStream(new java.io.FileInputStream("C:\\Users\\Devendra M Naik\\Documents\\NetBeansProjects\\virtual_atm\\MyObject.ser"));
+//            while(true){
+//                  Object obj=null;
+//                try {
+//                    obj = arr.add(ois.readObject());
+//                    System.out.println(obj.toString());
+//                    count++;
+//                } catch (ClassNotFoundException e) {
+//                    e.printStackTrace();
+//                }
+//                  //if(obj != null)
+//                     //arr.add(obj);
+//                  //else
+//                    // cont = false;
+//               }
+//        }
+//        catch(Exception e){
+//            e.printStackTrace();
+//        }
+//        String str="The requests are as follows:\n\nFirstname\tLastname\tUsername\tAddress\n\n";
+        //for(Object s:arr)
+//        Iterator it_arr=arr.iterator();
+//        while(it_arr.hasNext())
+//        {
+//            //str=str+s.toString()+",";
+//            str=str+it_arr.toString()+",";
+//        }
+//        
+//        String regex = "\\[|\\]";
+//        str = str.replaceAll(regex, "");
+//        str=str.replaceAll("\\,|\\ ", "\t");
+//        jTextArea1.setText(str);
+        String str="The requests are as follows:\n";
+        try {
+            ObjectInputStream oi=new ObjectInputStream(new java.io.FileInputStream("C:\\Users\\Devendra M Naik\\Documents\\NetBeansProjects\\virtual_atm\\MyObject.ser"));
+            ArrayList<String> arr_new=(ArrayList<String>)oi.readObject();
+            Iterator<String> itarr=arr_new.iterator();
+            int i=0;
+            while(itarr.hasNext()){
+                jTable1.setValueAt(itarr.next(), i, 1);
+                i++;
+            }
+            HashSet<String> hs_new=(HashSet<String>)oi.readObject();
+            Iterator<String> iths=hs_new.iterator();
+            i=0;
+            while(iths.hasNext()){
+                jTable1.setValueAt(iths.next(), i, 0);
+                i++;
+            }
+            LinkedList<String> ll_new=(LinkedList<String>)oi.readObject();
+            Iterator<String> itll=ll_new.iterator();
+            i=0;
+            while(itll.hasNext()){
+                jTable1.setValueAt(itll.next(), i, 2);
+                i++;
+            }
+        }
+        catch(IOException|ClassNotFoundException e)
+        {
+            Logger.getLogger(Create_User.class.getName()).log(Level.SEVERE, null, e);
+        }
+        
+        
+//            arr=(ArrayList)ois.readObject();
+//            hs=(HashSet)ois.readObject();
+//            ll=(LinkedList)ois.readObject();
+//            ois.close();
+//            Iterator it_hs=hs.iterator();
+//            Iterator it_ll=ll.iterator();
+//            Iterator it_arr=arr.iterator();
+//            //Iterator it_v=v.iterator();
+//            String str="The requests are as follows:\n";
+            //while(it_arr.hasNext()&&it_hs.hasNext())
+            //{
+            //    str=str+"\n"+(String) arr.get(0);//+"\t"+(String) it_hs.next();//+"\t"+(String) ll.get(0);//+"\t"+(String) it_v.next();
+            //}
+//            while(it_ll.hasNext())
+//            {
+//                str=str+it_ll.next().toString();
+//            }
+//            for(Object h:hs)
+//            {
+//                str=str+h.toString();
+//            }
+//            jTextArea1.setText(str);
+//        } catch (Exception ex) {
+//            Logger.getLogger(Create_User.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -343,5 +473,7 @@ public class Create_User extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
