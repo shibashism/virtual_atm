@@ -83,7 +83,8 @@ public class MoneyTransfer extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-        jLabel3.setText("SBM ©");
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("SADA ©");
         jLabel3.setToolTipText("Copyright");
 
         Transfer.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -141,7 +142,7 @@ public class MoneyTransfer extends javax.swing.JFrame {
         Header.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         Header.setForeground(new java.awt.Color(255, 255, 255));
         Header.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Header.setText("Welcome To SBM");
+        Header.setText("Welcome To SADA");
         Header.setToolTipText("");
         Header.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Header.setDoubleBuffered(true);
@@ -163,7 +164,7 @@ public class MoneyTransfer extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Devendra M Naik\\Downloads\\blue-striped-wall-and-wood-flooring-abstract-hd-wallpaper-2560x1440-5500.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Devendra M Naik\\Desktop\\back3.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -3,11 +3,14 @@ package newpackage;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import newpackage.SendMail;
+import javaapplication2.Withdrawal;
 
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
+import javaapplication2.LoginPage;
 
 public class MiniStatementGen implements Runnable {
 	
@@ -20,7 +23,7 @@ public class MiniStatementGen implements Runnable {
 	public MiniStatementGen(String username,String op, float amount, float balance) {
 		System.out.println("PDF Thread started");
 		userName = username;
-		op = operation;
+		operation = op;
 		txnAmt = amount;
 		bal = balance;
 		tr = new Thread(this);
@@ -63,10 +66,13 @@ public class MiniStatementGen implements Runnable {
 			content.endText();			
 			stamper.close();
 			System.out.println("PDF Generated!");
+                        new SendMail(LoginPage.email, operation, bal); //Start Mail Sending Thread
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+        
+        
 	}
 	
 	@Override

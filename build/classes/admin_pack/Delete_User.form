@@ -101,7 +101,6 @@
       <Events>
         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="Username_textFocusGained"/>
         <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="Username_textFocusLost"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Username_textActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Delete">
@@ -155,7 +154,7 @@
           <Font name="Trebuchet MS" size="14" style="3"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="SBM &#xa9;"/>
+        <Property name="text" type="java.lang.String" value="SADA &#xa9;"/>
         <Property name="toolTipText" type="java.lang.String" value="Copyright"/>
       </Properties>
     </Component>

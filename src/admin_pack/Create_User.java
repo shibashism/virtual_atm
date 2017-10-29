@@ -332,7 +332,7 @@ public class Create_User extends javax.swing.JFrame {
     }//GEN-LAST:event_Email_textFocusLost
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-//        boolean cont=true;
+        boolean cont=true;
         
 //        try {
 //            ois=new ObjectInputStream(new java.io.FileInputStream("C:\\Users\\Devendra M Naik\\Documents\\NetBeansProjects\\virtual_atm\\MyObject.ser"));

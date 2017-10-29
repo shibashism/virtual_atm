@@ -184,8 +184,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Trebuchet MS" size="48" style="1"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Welcome to SBM"/>
+        <Property name="text" type="java.lang.String" value="Welcome to SADA"/>
         <Property name="toolTipText" type="java.lang.String" value="Header"/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
@@ -199,7 +202,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="DMN &#xa9;"/>
+        <Property name="text" type="java.lang.String" value="SADA &#xa9;"/>
         <Property name="toolTipText" type="java.lang.String" value="Copyright"/>
       </Properties>
     </Component>

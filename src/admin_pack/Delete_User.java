@@ -51,11 +51,6 @@ public class Delete_User extends javax.swing.JFrame {
                 Username_textFocusLost(evt);
             }
         });
-        Username_text.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Username_textActionPerformed(evt);
-            }
-        });
 
         Delete.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Delete.setText("Delete");
@@ -92,7 +87,7 @@ public class Delete_User extends javax.swing.JFrame {
 
         Copyright.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
         Copyright.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Copyright.setText("SBM ©");
+        Copyright.setText("SADA ©");
         Copyright.setToolTipText("Copyright");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -183,10 +178,6 @@ public class Delete_User extends javax.swing.JFrame {
         if(Username_text.getText().equals(""))
             Username_text.setText("Enter Username");
     }//GEN-LAST:event_Username_textFocusLost
-
-    private void Username_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Username_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Username_textActionPerformed
 
     /**
      * @param args the command line arguments

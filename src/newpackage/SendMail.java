@@ -11,17 +11,18 @@ import javax.mail.internet.MimeMultipart;
 
 import java.util.*;
 import javaapplication2.LoginPage;
+import static newpackage.MiniStatementGen.txnId;
+import static newpackage.MiniStatementGen.userName;
 
 public class SendMail implements Runnable {
 	Thread t1;
 	String to, oper;
 	float amt, bal;
 
-	public SendMail(String toEmail, String operation, float amount, float balance) {
+	public SendMail(String toEmail, String operation, float balance) {
 		System.out.println("Mail Thread started");
 		to = toEmail;
 		oper = operation;
-		amt = amount;
 		bal = balance;
 		t1 = new Thread(this);
 		t1.start();
@@ -45,7 +46,6 @@ public class SendMail implements Runnable {
 				return new PasswordAuthentication(from, password);
 			}
 		});
-
 		try {
 			Message msg = new MimeMessage(session);
 			msg.setFrom(new InternetAddress(from));
@@ -60,20 +60,31 @@ public class SendMail implements Runnable {
 			
 			Multipart multipart = new MimeMultipart();
 			multipart.addBodyPart(msgPart);
-			String fileName = "D:/X-Coder0000001.pdf";
+			String fileName = "C:/Users/Devendra M Naik/Documents/NetBeansProjects/virtual_atm/" + userName + txnId + ".pdf";
 			DataSource source = new FileDataSource(fileName);
 			msgPart.setDataHandler(new DataHandler(source));
 			msgPart.setFileName("MiniStatement.pdf");
+                        System.out.println("attachment attached");
 
 
 			msgPart = new MimeBodyPart();
-			msgPart.setText("Dear Customer,\n" + "\n" + "Greetings from VTM Bank.\n" + "\n" + str1 + "\n"
+                        if(avlbal!=0){
+			msgPart.setText("Dear Customer,\n" + "\n" + "Greetings from SADA Bank.\n" + "\n" + str1 + "\n"
 					+ "The Available Balance in your account is INR " + avlbal + ".\n" + "\n"
 					+ "In case you have not made this transaction, please call our Customer Care.\n" + "\n"
 					+ "NEVER SHARE your Card number, CVV, PIN, OTP, Internet Banking User ID, Password or URN with anyone, even if the caller claims to be a bank employee. Sharing these details can lead to unauthorised access to your account.\n"
 					+ "\n" + "Looking forward to more opportunities to be of service to you.\n" + "\n" + "Sincerely,\n"
 					+ "\n" + "Customer Service Team\n" + "SAAD Bank Limited\n" + "\n"
+					+ "This is an auto generated e-mail. Please do not reply.");}
+                        else
+                        {
+                            msgPart.setText("Dear Customer,\n" + "\n" + "Greetings from SBM Bank.\n" + "\n" + "Your PIN is successfully changed."
+					+ "In case you have not made this Change of PIN, please call our Customer Care.\n" + "\n"
+					+ "NEVER SHARE your Card number, CVV, PIN, OTP, Internet Banking User ID, Password or URN with anyone, even if the caller claims to be a bank employee. Sharing these details can lead to unauthorised access to your account.\n"
+					+ "\n" + "Looking forward to more opportunities to be of service to you.\n" + "\n" + "Sincerely,\n"
+					+ "\n" + "Customer Service Team\n" + "SAAD Bank Limited\n" + "\n"
 					+ "This is an auto generated e-mail. Please do not reply.");
+                        }
 			
 			multipart.addBodyPart(msgPart);
 			msg.setContent(multipart);
@@ -87,8 +98,8 @@ public class SendMail implements Runnable {
 			e.printStackTrace();
 		}
 
-	}
-
+        }
+        
 	@Override
 	public void run() {
 		System.out.println("Thread is running");

@@ -4,9 +4,12 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Timer;
+import newpackage.MiniStatementGen;
+import newpackage.SendMail;
 
 public class PIN_Change extends javax.swing.JFrame {
 
@@ -18,6 +21,10 @@ public class PIN_Change extends javax.swing.JFrame {
         int c1=0;
         int f=1;
         final int delay = waitingTime / 1000;
+        String sDate = Calendar.getInstance().get(Calendar.YEAR) + "-" + (Calendar.getInstance().get(Calendar.MONTH) + 1)
+			+ "-" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + " at "
+			+ Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + ":" + Calendar.getInstance().get(Calendar.MINUTE) + ":"
+			+ Calendar.getInstance().get(Calendar.SECOND) + ":" + Calendar.getInstance().get(Calendar.MILLISECOND);
     public PIN_Change() {
         initComponents();
         t = new Timer(delay, new ActionListener() {
@@ -31,8 +38,6 @@ public class PIN_Change extends javax.swing.JFrame {
                         jProgressBar1.setString("Contacting the server");
                     if(c1==45)
                         jProgressBar1.setString("Please wait");
-                    if(c1==80)
-                        jProgressBar1.setString("Dispensing your money");
                     if(c1==99)
                        f=0;
                 }
@@ -57,7 +62,7 @@ public class PIN_Change extends javax.swing.JFrame {
         Old_PIN = new javax.swing.JPasswordField();
         New_PIN = new javax.swing.JPasswordField();
         Reset = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        Copyright = new javax.swing.JLabel();
         Header = new javax.swing.JLabel();
         Back = new javax.swing.JButton();
         Cancel = new javax.swing.JButton();
@@ -92,7 +97,7 @@ public class PIN_Change extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Devendra M Naik\\Downloads\\Barn wood wallpaper 02 HD Desktop Wallpapers.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Devendra M Naik\\Desktop\\back3.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
 
         Old_PIN.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
@@ -137,14 +142,14 @@ public class PIN_Change extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
-        jLabel3.setText("DMN ©");
+        Copyright.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
+        Copyright.setText("SADA ©");
 
         Header.setBackground(new java.awt.Color(0, 204, 153));
         Header.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         Header.setForeground(new java.awt.Color(255, 255, 255));
         Header.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Header.setText("Welcome To SBM");
+        Header.setText("Welcome To SADA");
         Header.setToolTipText("");
         Header.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Header.setDoubleBuffered(true);
@@ -183,7 +188,7 @@ public class PIN_Change extends javax.swing.JFrame {
         });
 
         jProgressBar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jProgressBar1.setString("Processing your transaction");
+        jProgressBar1.setString("");
         jProgressBar1.setStringPainted(true);
         jProgressBar1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -217,7 +222,7 @@ public class PIN_Change extends javax.swing.JFrame {
             .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(890, 890, 890)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Copyright, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(660, 660, 660)
                 .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -225,7 +230,7 @@ public class PIN_Change extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,8 +248,8 @@ public class PIN_Change extends javax.swing.JFrame {
                 .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Copyright, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(390, 390, 390)
                 .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -312,9 +317,12 @@ public class PIN_Change extends javax.swing.JFrame {
                        } catch (SQLException ex) {
                            Logger.getLogger(PIN_Change.class.getName()).log(Level.SEVERE, null, ex);
                        }
-                       javax.swing.JOptionPane.showMessageDialog(rootPane, "PIN was changed successfully!\nPlease do remember your New PIN", "Success", getDefaultCloseOperation());
-                       new ChoiceButtons().setVisible(true);
-                       this.dispose();
+                       //javax.swing.JOptionPane.showMessageDialog(rootPane, "PIN was changed successfully!\nPlease do remember your New PIN", "Success", getDefaultCloseOperation());
+                       //String str = "A PIN change has been made using your Debit Card linked to SAAD Bank Account on " + sDate + ".";
+					new MiniStatementGen(LoginPage.user,"PIN CHANGED", 0, LoginPage.bal); //Start Ministatement Generation Thread
+					//new SendMail(LoginPage.email, "PIN CHANGED", 0); //Start Mail Sending Thread
+					t.start();
+					System.out.println(" Your Debit Card PIN was changed on " + sDate);
                    }
                    else
                    {
@@ -417,6 +425,7 @@ public class PIN_Change extends javax.swing.JFrame {
     private javax.swing.JButton Back;
     private javax.swing.JButton Cancel;
     private javax.swing.JButton Change_PIN;
+    private javax.swing.JLabel Copyright;
     private javax.swing.JLabel Header;
     private javax.swing.JPasswordField New_PIN;
     private javax.swing.JLabel New_Pin_label;
@@ -424,7 +433,6 @@ public class PIN_Change extends javax.swing.JFrame {
     private javax.swing.JLabel Old_Pin_label;
     private javax.swing.JButton Reset;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }

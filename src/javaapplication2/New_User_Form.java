@@ -7,6 +7,7 @@ package javaapplication2;
 
 import java.awt.Color;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -35,6 +36,7 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
     public static ArrayList<String> arr;
     public static HashSet<String> hs;
     public static LinkedList<String> ll;
+    public static ArrayList<String> arr_store;
     public Date date;
     public String strDate;
     public ObjectInputStream ois;
@@ -44,6 +46,7 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
         arr=new ArrayList<>();
         hs=new HashSet<>();
         ll=new LinkedList<>();
+        arr_store=new ArrayList<>();
     }
 
     /**
@@ -72,7 +75,6 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
         jLabel7 = new javax.swing.JLabel();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,7 +83,7 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
         Header.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         Header.setForeground(new java.awt.Color(255, 255, 255));
         Header.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Header.setText("Welcome To SBM");
+        Header.setText("Welcome To SADA");
         Header.setToolTipText("");
         Header.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Header.setDoubleBuffered(true);
@@ -213,9 +215,7 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Username should be in between 4-10 alphanumeric characters");
 
-        jLabel9.setText("jLabel9");
-
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Devendra M Naik\\Downloads\\wallp7.jpg")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Devendra M Naik\\Desktop\\back3.jpg")); // NOI18N
         jLabel10.setText("jLabel10");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -240,9 +240,6 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
             .addGroup(layout.createSequentialGroup()
                 .addGap(184, 184, 184)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel9))
             .addGroup(layout.createSequentialGroup()
                 .addGap(605, 605, 605)
                 .addComponent(Register_User, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -289,9 +286,7 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addComponent(jLabel9)
-                .addGap(13, 13, 13)
+                .addGap(36, 36, 36)
                 .addComponent(Register_User, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(321, 321, 321)
@@ -381,7 +376,18 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
                 hs.add(Username_text.getText());
                 ll.add(Address_text.getText());
                 javax.swing.JOptionPane.showMessageDialog(rootPane, "Account created successfully","Success",getDefaultCloseOperation());
-                New_User_Form.count++;}
+                New_User_Form.count++;
+                try{
+                    FileOutputStream fout = new FileOutputStream("C:\\Users\\Devendra M Naik\\Documents\\NetBeansProjects\\virtual_atm\\MyObject.ser",true);
+                    ObjectOutputStream out= new ObjectOutputStream(fout);
+                    out.writeObject(arr);
+                    out.writeObject(hs);
+                    out.writeObject(ll);
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+                }
                 else{
                 javax.swing.JOptionPane.showMessageDialog(rootPane, "Invalid Input\nPlease fill your information again.","Error",getDefaultCloseOperation());
                 Firstname_text.setText("Enter Firstname");
@@ -436,7 +442,6 @@ public class New_User_Form extends javax.swing.JFrame implements Serializable{
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

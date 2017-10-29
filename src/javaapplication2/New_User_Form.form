@@ -46,10 +46,6 @@
               <Component id="jLabel4" min="-2" pref="199" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <EmptySpace min="43" pref="43" max="-2" attributes="0"/>
-              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
               <EmptySpace min="605" pref="605" max="-2" attributes="0"/>
               <Component id="Register_User" min="-2" pref="206" max="-2" attributes="0"/>
           </Group>
@@ -106,9 +102,7 @@
               </Group>
               <EmptySpace min="49" pref="49" max="-2" attributes="0"/>
               <Component id="jLabel4" min="-2" pref="33" max="-2" attributes="0"/>
-              <EmptySpace min="23" pref="23" max="-2" attributes="0"/>
-              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Component id="Register_User" min="-2" pref="36" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
@@ -152,7 +146,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Welcome To SBM"/>
+        <Property name="text" type="java.lang.String" value="Welcome To SADA"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Default Cursor"/>
@@ -347,15 +341,10 @@
         <Property name="text" type="java.lang.String" value="Username should be in between 4-10 alphanumeric characters"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel9"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Devendra M Naik\Downloads\wallp7.jpg"/>
+          <Image iconType="2" name="C:\Users\Devendra M Naik\Desktop\back3.jpg"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel10"/>
       </Properties>

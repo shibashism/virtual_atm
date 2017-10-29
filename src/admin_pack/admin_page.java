@@ -26,6 +26,7 @@ public class admin_page extends javax.swing.JFrame {
         View = new javax.swing.JButton();
         Header = new javax.swing.JLabel();
         Exit = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,7 +55,7 @@ public class admin_page extends javax.swing.JFrame {
         });
 
         Header.setBackground(new java.awt.Color(0, 204, 153));
-        Header.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
+        Header.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         Header.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Header.setText("Welcome Admin");
         Header.setToolTipText("");
@@ -70,6 +71,11 @@ public class admin_page extends javax.swing.JFrame {
                 ExitActionPerformed(evt);
             }
         });
+
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("SADA ©");
+        jLabel2.setToolTipText("Copyright");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,6 +94,9 @@ public class admin_page extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(View, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(77, 77, 77))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,7 +110,8 @@ public class admin_page extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84))
+                .addGap(58, 58, 58)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -168,5 +178,6 @@ public class admin_page extends javax.swing.JFrame {
     private javax.swing.JButton Exit;
     private javax.swing.JLabel Header;
     private javax.swing.JButton View;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

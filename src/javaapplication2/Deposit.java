@@ -3,15 +3,13 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import newpackage.MiniStatementGen;
-import newpackage.SendMail;
+//import newpackage.MiniStatementGen;
+//import newpackage.SendMail;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.TimeZone;
-//import java.util.regex.Matcher;
-//import java.util.regex.Pattern;
 import javax.swing.Timer;
 import newpackage.MiniStatementGen;
 
@@ -45,7 +43,7 @@ public class Deposit extends javax.swing.JFrame {
                     if(c1==45)
                         jProgressBar1.setString("Please wait");
                     if(c1==80)
-                        jProgressBar1.setString("Dispensing your money");
+                        jProgressBar1.setString("Depositing your money");
                     if(c1==99)
                        f=0;
                 }
@@ -96,12 +94,17 @@ public class Deposit extends javax.swing.JFrame {
                 DepositMouseExited(evt);
             }
         });
+        Deposit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DepositActionPerformed(evt);
+            }
+        });
 
         Deposit_textfield.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Deposit_textfield.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Deposit_textfield.setText("Enter the amount");
         Deposit_textfield.setToolTipText("Please enter the amount to be deposited");
-        Deposit_textfield.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+        Deposit_textfield.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         Deposit_textfield.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 Deposit_textfieldFocusGained(evt);
@@ -113,14 +116,14 @@ public class Deposit extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("DMN ©");
+        jLabel1.setText("SADA ©");
         jLabel1.setToolTipText("Copyright");
 
         Header.setBackground(new java.awt.Color(0, 204, 153));
         Header.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         Header.setForeground(new java.awt.Color(255, 255, 255));
         Header.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Header.setText("Welcome To SBM");
+        Header.setText("Welcome To SADA");
         Header.setToolTipText("");
         Header.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Header.setDoubleBuffered(true);
@@ -176,7 +179,7 @@ public class Deposit extends javax.swing.JFrame {
         });
 
         jProgressBar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jProgressBar1.setString("Processing your transaction");
+        jProgressBar1.setString("");
         jProgressBar1.setStringPainted(true);
         jProgressBar1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -184,7 +187,7 @@ public class Deposit extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Devendra M Naik\\Downloads\\wallp4.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Devendra M Naik\\Desktop\\back3.jpg")); // NOI18N
         jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -311,6 +314,46 @@ public class Deposit extends javax.swing.JFrame {
     private void ResetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResetMouseExited
         Reset.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_ResetMouseExited
+
+    private void DepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepositActionPerformed
+        if (Deposit_textfield.getText().equals("Enter the amount")) {
+			javax.swing.JOptionPane.showMessageDialog(rootPane, "Field cannot be blank", "Error Withdrawal",
+					getDefaultCloseOperation());
+		} else {
+			if (Integer.parseInt(Deposit_textfield.getText().trim()) > 0&&Deposit_textfield.getText().trim().matches("[0-9]+"))
+			{
+                            obj_dep.num1 = Integer.parseInt(Deposit_textfield.getText().trim());
+                            obj_dep.res = LoginPage.bal + obj_dep.num1;
+                            this.msg1();
+                            LoginPage.bal = obj_dep.res;
+                            Deposit_textfield.setText("Enter the amount");
+                            obj_dep.change();
+                            String str = "A Deposit of INR" + obj_dep.num1
+                                            + "has been made using your Debit Card linked to SAAD Bank Account on " + sDate + ".";
+                            new MiniStatementGen(LoginPage.user,"DEPOSITED", obj_dep.num1, obj_dep.res); //Start Ministatement Generation Thread
+                            //new SendMail(LoginPage.email, str, obj_dep.res); //Start Mail Sending Thread
+                            t.start();
+                            System.out.println("Deposit amount: " + obj_dep.num1 + " on " + sDate);
+                            Cancel.setEnabled(false);
+                            Back.setEnabled(false);
+                            Deposit.setEnabled(false);
+                            Reset.setEnabled(false);
+                            Deposit_textfield.setEnabled(false);
+                            try (BufferedWriter bw = new BufferedWriter(new FileWriter(LoginPage.trans_details, true))) {
+                                    bw.append("Username: " + LoginPage.user + " Deposited amount: " + obj_dep.num1 + " on "
+                                                    + sDate);
+                                    System.out.println("==============================");
+                                    bw.newLine();
+                            } catch (IOException e) {
+                                    e.printStackTrace();
+                            }				
+			} else {
+				javax.swing.JOptionPane.showMessageDialog(rootPane, "Value entered is invalid", "Error",
+						getDefaultCloseOperation());
+				Deposit_textfield.setText("Enter the amount");
+			}
+		}
+    }//GEN-LAST:event_DepositActionPerformed
 
     /**
      * @param args the command line arguments

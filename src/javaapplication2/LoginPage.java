@@ -53,7 +53,7 @@ public class LoginPage extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         Help1.setVisible(false);
-            Help2.setVisible(false);
+        Help2.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -147,15 +147,16 @@ public class LoginPage extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 204, 204));
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Welcome to SBM");
+        jLabel1.setText("Welcome to SADA");
         jLabel1.setToolTipText("Header");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("DMN ©");
+        jLabel2.setText("SADA ©");
         jLabel2.setToolTipText("Copyright");
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -300,7 +301,7 @@ public class LoginPage extends javax.swing.JFrame {
                     }
                     else
                     {
-                        String query="select username,pin,balance,email from userdata where username='"+user+"' and pin="+pin;
+                        String query="select balance,email,blocked from userdata where username='"+user+"' and pin="+pin;
                         sDate = Calendar.getInstance().get(Calendar.YEAR) + "-"
                                         + (Calendar.getInstance().get(Calendar.MONTH)+1)
                                         + "-" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
@@ -312,10 +313,19 @@ public class LoginPage extends javax.swing.JFrame {
                             rs.absolute(1);
                             bal=rs.getFloat("BALANCE");
                             email=rs.getString("email");
+                            blocked=rs.getInt("blocked");
+                            System.out.println(blocked);
                             c.setTimeZone(TimeZone.getTimeZone("Asia/Calcutta"));
                             System.out.println("Logged in as "+user+"\t"+sDate);
-                            new ChoiceButtons().setVisible(true);
-                            this.dispose();
+                            if(blocked!=1)
+                            {
+                                new ChoiceButtons().setVisible(true);
+                                this.dispose();
+                            }
+                            else
+                            {
+                                javax.swing.JOptionPane.showMessageDialog(rootPane, "Your Card is blocked due to security reasons\nPlease contact the bank for further details", "Alert",getDefaultCloseOperation());
+                            }
                         } 
                         catch (SQLException e) 
                         {
